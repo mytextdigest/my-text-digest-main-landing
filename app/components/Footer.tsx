@@ -7,28 +7,20 @@ import Image from 'next/image';
 export default function Footer() {
   const footerLinks = {
     product: [
-      { name: 'Features', href: '#features' },
-      { name: 'Desktop App', href: '#desktop-app' },
-      { name: 'Use Cases', href: '#use-cases' },
-      { name: 'Pricing', href: '#pricing' },
+      { name: 'Features', href: '/#features' },
+      { name: 'Use Cases', href: '/#use-cases' },
+      { name: 'Web Version Pricing', href: '/web-pricing' },
+      { name: 'Desktop Version Pricing', href: '/desktop-pricing' },
     ],
     company: [
       { name: 'About Us', href: '#about' },
-      { name: 'Blog', href: '#blog' },
-      { name: 'Careers', href: '#careers' },
-      { name: 'Contact', href: '#contact' },
     ],
     resources: [
-      { name: 'Documentation', href: '#docs' },
-      { name: 'API Reference', href: '#api' },
-      { name: 'Support', href: '#support' },
-      { name: 'Community', href: '#community' },
+      { name: 'Help & Support', href: '/help' },
     ],
     legal: [
-      { name: 'Privacy Policy', href: '#privacy' },
-      { name: 'Terms of Service', href: '#terms' },
-      { name: 'Security', href: '#security' },
-      { name: 'Cookie Policy', href: '#cookies' },
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms of Service', href: '/terms' },
     ],
   };
 
