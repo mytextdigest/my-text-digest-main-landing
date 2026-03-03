@@ -67,7 +67,7 @@ export default function Footer() {
                 height={40}
                 className="object-contain"
               />
-              <span className="text-xl font-bold bg-gradient-to-r from-[#00E5FF] to-[#7C7CFF] bg-clip-text text-transparent">
+              <span className="text-xl font-bold bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
                 My Text Digest
               </span>
             </motion.div>

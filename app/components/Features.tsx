@@ -95,19 +95,19 @@ export default function Features() {
             transition={{ duration: 0.5 }}
             className="inline-block mb-4"
           >
-            <span className="px-4 py-2 rounded-full border border-[#7C7CFF]/30 text-[#00E5FF] text-sm font-medium">
+            <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium">
               ⚡ Power Meets Simplicity
             </span>
           </motion.div>
-          
+
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-white">Powerful </span>
-            <span className="bg-gradient-to-r from-[#00E5FF] to-[#7C7CFF] bg-clip-text text-transparent">
+            <span className="text-foreground">Powerful </span>
+            <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
               Features
             </span>
           </h2>
-          
-          <p className="text-[#EDEDED]/70 text-lg md:text-xl max-w-2xl mx-auto">
+
+          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
             Enterprise-grade capabilities designed for professionals who demand excellence
           </p>
         </motion.div>

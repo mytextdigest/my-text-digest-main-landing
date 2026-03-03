@@ -132,15 +132,16 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
           >
-            <span className="text-foreground">Ask Anything.</span>
+            {/* <span className="text-foreground">Ask Anything.</span> */}
+            <span className="text-foreground">Your Knowledge.</span>
             <br />
             <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
-              From Your Documents.
+              Structured by Design. Accessible on Your Terms.
             </span>
           </motion.h1>
 
           {/* Subheadline */}
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -151,7 +152,19 @@ export default function Hero() {
               My Text Digest
             </span>{' '}
             gives precise, contextual answers instantly.
+          </motion.p> */}
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
+          >
+            My Text Digest is a privacy-first knowledge platform that organizes your work
+            into focused projects, helping you explore documents intelligently - whether
+            you choose Desktop or Cloud.
           </motion.p>
+
 
           {/* Highlights */}
           <motion.div
@@ -183,7 +196,7 @@ export default function Hero() {
           >
             {/* Web Version */}
             <motion.a
-              href="https://my-text-digest-saas.vercel.app/"
+              href="/web-pricing"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -194,12 +207,12 @@ export default function Hero() {
                         transition-all duration-300 glow-primary"
             >
               <FiPlay className="w-5 h-5" />
-              <span>Use Web Version</span>
+              <span>Sign Up for Web Version</span>
             </motion.a>
 
             {/* Desktop Version */}
             <motion.a
-              href="https://my-text-digest-desktop-licensing.vercel.app/"
+              href="/desktop-pricing"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -212,7 +225,7 @@ export default function Hero() {
                         transition-all duration-300"
             >
               <FiDownload className="w-5 h-5 group-hover:animate-bounce" />
-              <span>Get Desktop Version</span>
+              <span>Sign Up For Desktop Version</span>
             </motion.a>
           </motion.div>
 

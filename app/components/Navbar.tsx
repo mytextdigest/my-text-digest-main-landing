@@ -4,9 +4,12 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiDownload, FiFileText, FiMail } from 'react-icons/fi';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +19,21 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  let navLinks = [
+    {
+      "name": "Features",
+      "link": "/#features"
+    },
+    {
+      "name": "Use Cases",
+      "link": "/#use-case"
+    },
+    {
+      "name": "Privacy",
+      "link": "/privacy"
+    }
+  ]
 
   return (
     <motion.nav
@@ -50,33 +68,36 @@ export default function Navbar() {
 
           {/* Center Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {/* {['Features', 'How It Works', 'Privacy', 'Desktop App', 'Use Cases'].map((item) => (
-              <motion.a
-                key={item}
-                href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                whileHover={{ y: -2 }}
-                className="text-muted-foreground hover:text-primary-600 transition-colors duration-200 text-sm font-medium"
-              >
-                {item}
-              </motion.a>
-            ))} */}
-            {[ 'Web Version', 'Desktop App', 'Help'].map((item) => (
-              <motion.a
-                key={item}
-                href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                whileHover={{ y: -2 }}
-                className="text-muted-foreground hover:text-primary-600 transition-colors duration-200 text-sm font-medium"
-              >
-                {item}
-              </motion.a>
-            ))}
+            {navLinks.map((item) => {
+              const isActive =
+                item.link === pathname ||
+                (item.link.includes('#') && pathname === '/');
+
+              return (
+                <motion.div
+                  key={item.name}
+                  whileHover={{ y: -2 }}
+                >
+                  <Link
+                    href={item.link}
+                    className={`text-sm font-medium transition-colors duration-200 ${
+                      isActive
+                        ? 'text-primary-600'
+                        : 'text-muted-foreground hover:text-primary-600'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Right Actions */}
           <div className="flex items-center space-x-4">
 
             {/* Primary CTA */}
-            <motion.a
+            {/* <motion.a
               href="#download"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -87,10 +108,10 @@ export default function Navbar() {
             >
               <FiDownload className="w-4 h-4" />
               <span>Download App</span>
-            </motion.a>
+            </motion.a> */}
 
             {/* Docs Button */}
-            <motion.a
+            {/* <motion.a
               href="#docs"
               whileHover={{ scale: 1.05 }}
               className="hidden md:flex items-center space-x-2 px-5 py-2.5 rounded-full 
@@ -101,11 +122,11 @@ export default function Navbar() {
             >
               <FiFileText className="w-4 h-4" />
               <span className="text-sm">Docs</span>
-            </motion.a>
+            </motion.a> */}
 
             {/* Contact Button */}
             <motion.a
-              href="#contact"
+              href="/help"
               whileHover={{ scale: 1.05 }}
               className="flex items-center space-x-2 px-5 py-2.5 rounded-full 
                          border border-border 
@@ -114,7 +135,7 @@ export default function Navbar() {
                          transition-all duration-300"
             >
               <FiMail className="w-4 h-4" />
-              <span className="text-sm hidden sm:inline">Contact</span>
+              <span className="text-sm hidden sm:inline">Help</span>
             </motion.a>
 
           </div>

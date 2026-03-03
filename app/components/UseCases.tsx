@@ -1,69 +1,100 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiBookOpen, FiCodepen, FiCode, FiTrendingUp, FiAward } from 'react-icons/fi';
+import { 
+  FiBookOpen, 
+  FiCode, 
+  FiTrendingUp, 
+  FiAward,
+  FiLayers,
+  FiZap
+} from 'react-icons/fi';
 
 export default function UseCases() {
   const useCases = [
     {
       icon: FiBookOpen,
-      emoji: '📚',
-      title: 'Researchers',
-      scenario: 'Academic Excellence',
-      description: 'Analyze papers, extract findings, and synthesize insights across multiple research documents instantly.',
+      emoji: '📂',
+      title: 'Reviewing Case Files',
+      scenario: 'Cross-Document Analysis',
+      description:
+        'Quickly understand arguments and evidence across related documents.',
       example: {
-        question: '"Compare methodologies across these 10 papers"',
-        answer: 'Comprehensive analysis with citations',
-      },
-      color: '#00E5FF',
-    },
-    {
-      icon: FiCodepen,
-      emoji: '⚖️',
-      title: 'Lawyers',
-      scenario: 'Legal Intelligence',
-      description: 'Review contracts, find precedents, and extract key clauses from legal documents with precision.',
-      example: {
-        question: '"Find all liability clauses in these contracts"',
-        answer: 'Instant extraction with references',
-      },
-      color: '#7C7CFF',
-    },
-    {
-      icon: FiCode,
-      emoji: '👨‍💻',
-      title: 'Developers',
-      scenario: 'Code Documentation',
-      description: 'Navigate codebases, understand APIs, and extract implementation details from technical docs.',
-      example: {
-        question: '"How does the authentication flow work?"',
-        answer: 'Step-by-step breakdown with code',
+        question: '“What are the key arguments in this case?”',
+        answer:
+          'Main claims, supporting evidence, and counterpoints summarized clearly.',
       },
       color: '#00E5FF',
     },
     {
       icon: FiTrendingUp,
-      emoji: '🧑‍💼',
-      title: 'Business Analysts',
-      scenario: 'Data Insights',
-      description: 'Query reports, analyze trends, and extract actionable insights from business documents.',
+      emoji: '🔬',
+      title: 'Analyzing Research Material',
+      scenario: 'Insight Extraction',
+      description:
+        'Extract insights from long papers without losing context.',
       example: {
-        question: '"What were Q4 performance metrics?"',
-        answer: 'Key metrics with comparisons',
+        question: '“What are the main findings in these studies?”',
+        answer:
+          'Shared themes, conclusions, and differences highlighted.',
+      },
+      color: '#7C7CFF',
+    },
+    {
+      icon: FiLayers,
+      emoji: '📊',
+      title: 'Managing Multi-Document Reports',
+      scenario: 'Comparative Review',
+      description:
+        'Compare and explore multiple reports within one focused space.',
+      example: {
+        question: '“How do these reports differ in their conclusions?”',
+        answer:
+          'Key contrasts and data variations outlined concisely.',
+      },
+      color: '#00E5FF',
+    },
+    {
+      icon: FiCode,
+      emoji: '🛠️',
+      title: 'Exploring Technical Documentation',
+      scenario: 'Precise Information Retrieval',
+      description:
+        'Find precise information without manual searching.',
+      example: {
+        question: '“What are the setup requirements mentioned?”',
+        answer:
+          'Required steps, specifications, and dependencies summarized.',
       },
       color: '#7C7CFF',
     },
     {
       icon: FiAward,
-      emoji: '🎓',
-      title: 'Students',
-      scenario: 'Learning Accelerator',
-      description: 'Study materials, understand concepts, and get instant explanations from textbooks and notes.',
+      emoji: '📖',
+      title: 'Studying Complex Material',
+      scenario: 'Structured Understanding',
+      description:
+        'Break down dense content into structured understanding.',
       example: {
-        question: '"Explain quantum mechanics from chapter 5"',
-        answer: 'Clear explanation with examples',
+        question: '“What are the core concepts in this chapter?”',
+        answer:
+          'Key principles and definitions presented clearly.',
       },
       color: '#00E5FF',
+    },
+    {
+      icon: FiZap,
+      emoji: '🗂️',
+      title: 'Organizing Large Document Sets',
+      scenario: 'Information Structuring',
+      description:
+        'Navigate and organize large collections of documents efficiently.',
+      example: {
+        question: '“Summarize the major themes across all files.”',
+        answer:
+          'Overarching topics and recurring patterns clearly structured.',
+      },
+      color: '#7C7CFF',
     },
   ];
 
@@ -97,20 +128,20 @@ export default function UseCases() {
             transition={{ duration: 0.5 }}
             className="inline-block mb-4"
           >
-            <span className="px-4 py-2 rounded-full border border-[#7C7CFF]/30 text-[#00E5FF] text-sm font-medium">
-              🎯 Who It's For
+            <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium">
+              🎯 Real-World Applications
             </span>
           </motion.div>
-          
+
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-white">Built for </span>
-            <span className="bg-gradient-to-r from-[#00E5FF] to-[#7C7CFF] bg-clip-text text-transparent">
-              Professionals
+            <span className="text-foreground">Built for </span>
+            <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
+              Real Work
             </span>
           </h2>
-          
-          <p className="text-[#EDEDED]/70 text-lg md:text-xl max-w-2xl mx-auto">
-            Trusted by knowledge workers across industries who demand precision and privacy
+
+          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
+            Designed for anyone working with complex documents across multiple files
           </p>
         </motion.div>
 
