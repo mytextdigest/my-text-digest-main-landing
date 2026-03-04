@@ -187,46 +187,100 @@ export default function Hero() {
             ))}
           </motion.div> */}
 
-          {/* CTAs */}
+          {/* CTA COMPARISON */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-12"
           >
-            {/* Web Version */}
-            <motion.a
-              href="/web-pricing"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group flex items-center space-x-3 px-8 py-4 rounded-full 
-                        bg-primary-600 hover:bg-primary-700 
-                        text-white font-semibold text-lg 
-                        transition-all duration-300 glow-primary"
-            >
-              <FiPlay className="w-5 h-5" />
-              <span>Sign Up for Cloud Version</span>
-            </motion.a>
 
-            {/* Desktop Version */}
-            <motion.a
-              href="/desktop-pricing"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group flex items-center space-x-3 px-8 py-4 rounded-full 
-                        border-2 border-[#7C7CFF]/50 
-                        text-white font-semibold text-lg 
-                        hover:border-[#00E5FF] 
-                        hover:bg-[#00E5FF]/10 
-                        transition-all duration-300"
+            {/* CLOUD VERSION */}
+            <motion.div
+              whileHover={{ y: -8 }}
+              className="glass rounded-2xl p-8 flex flex-col justify-between group"
             >
-              <FiDownload className="w-5 h-5 group-hover:animate-bounce" />
-              <span>Sign Up For Desktop Version</span>
-            </motion.a>
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <FiPlay className="text-primary-500 w-6 h-6" />
+                  <h3 className="text-2xl font-bold text-foreground">
+                    Cloud Version
+                  </h3>
+                </div>
+
+                <p className="text-muted-foreground text-sm mb-6">
+                  Access My Text Digest from anywhere with secure cloud-powered document intelligence.
+                </p>
+
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  <li>⚡ Instant AI answers from uploaded documents</li>
+                  <li>☁️ Access your documents from any device</li>
+                  <li>📂 Manage multiple projects and document sets</li>
+                  <li>🔒 Secure cloud infrastructure</li>
+                  <li>🚀 Perfect for collaboration and mobility</li>
+                </ul>
+              </div>
+
+              <motion.a
+                href="/web-pricing"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="mt-8 flex items-center justify-center gap-3 px-6 py-4 rounded-full 
+                          bg-primary-600 hover:bg-primary-700 
+                          text-white font-semibold transition-all duration-300 glow-primary"
+              >
+                <FiPlay />
+                Sign Up for Cloud Version
+              </motion.a>
+            </motion.div>
+
+
+            {/* DESKTOP VERSION */}
+            <motion.div
+              whileHover={{ y: -8 }}
+              className="glass rounded-2xl p-8 flex flex-col justify-between group"
+            >
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <FiDownload className="text-primary-500 w-6 h-6" />
+                  <h3 className="text-2xl font-bold text-foreground">
+                    Desktop Version
+                  </h3>
+                </div>
+
+                <p className="text-muted-foreground text-sm mb-6">
+                  A privacy-first desktop application where your documents remain fully under your control.
+                </p>
+
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  <li>🔒 Documents never leave your computer</li>
+                  <li>💻 Fully local document processing</li>
+                  <li>📁 Ideal for confidential or sensitive data</li>
+                  <li>⚡ Fast performance with local storage</li>
+                  <li>📴 Core functionality works offline</li>
+                </ul>
+              </div>
+
+              <motion.a
+                href="/desktop-pricing"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="mt-8 flex items-center justify-center gap-3 px-6 py-4 rounded-full 
+                          border-2 border-[#7C7CFF]/50 
+                          text-white font-semibold 
+                          hover:border-[#00E5FF] 
+                          hover:bg-[#00E5FF]/10 
+                          transition-all duration-300"
+              >
+                <FiDownload className="group-hover:animate-bounce" />
+                Get Desktop Version
+              </motion.a>
+            </motion.div>
+
           </motion.div>
 
           {/* Floating Mockup Preview (placeholder) */}
