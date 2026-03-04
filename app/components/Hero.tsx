@@ -197,88 +197,117 @@ export default function Hero() {
 
             {/* CLOUD VERSION */}
             <motion.div
-              whileHover={{ y: -8 }}
-              className="glass rounded-2xl p-8 flex flex-col justify-between group"
+              whileHover={{ y: -6 }}
+              className="glass rounded-2xl overflow-hidden flex flex-col backdrop-blur-xl bg-white/5 border border-white/10"
             >
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <FiPlay className="text-primary-500 w-6 h-6" />
-                  <h3 className="text-2xl font-bold text-foreground">
-                    Cloud Version
-                  </h3>
-                </div>
 
-                <p className="text-muted-foreground text-sm mb-6">
-                  Access My Text Digest from anywhere with secure cloud-powered document intelligence.
-                </p>
-
-                <ul className="space-y-3 text-sm text-muted-foreground">
-                  <li>⚡ Instant AI answers from uploaded documents</li>
-                  <li>☁️ Access your documents from any device</li>
-                  <li>📂 Manage multiple projects and document sets</li>
-                  <li>🔒 Secure cloud infrastructure</li>
-                  <li>🚀 Perfect for collaboration and mobility</li>
-                </ul>
+              {/* Card Header */}
+              <div className="px-8 py-5 border-b border-white/10 bg-white/[0.03]">
+                <h3 className="text-lg font-bold">
+                  <span className="text-foreground">Cloud </span>
+                  <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
+                    Version
+                  </span>
+                </h3>
               </div>
 
-              <motion.a
-                href="/web-pricing"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-8 flex items-center justify-center gap-3 px-6 py-4 rounded-full 
-                          bg-primary-600 hover:bg-primary-700 
-                          text-white font-semibold transition-all duration-300 glow-primary"
-              >
-                <FiPlay />
-                Sign Up for Cloud Version
-              </motion.a>
+              {/* Card Body */}
+              <div className="p-8 flex flex-col justify-between flex-1">
+
+                <div>
+                  <p className="text-muted-foreground text-sm mb-6">
+                    Access My Text Digest from anywhere with secure cloud-powered document intelligence.
+                  </p>
+
+                  <ul className="space-y-3 text-sm text-muted-foreground">
+                    {[
+                      "Instant AI answers from uploaded documents",
+                      "Access your documents from any device",
+                      "Manage multiple projects and document sets",
+                      "Secure cloud infrastructure",
+                      "Perfect for collaboration and mobility",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--primary-500)] flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <motion.a
+                  href="/web-pricing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.96 }}
+                  className="mt-8 flex items-center justify-center px-6 py-4 rounded-full 
+                            bg-primary-600 hover:bg-primary-700 
+                            text-white font-semibold transition-all duration-300 glow-primary"
+                >
+                  Sign Up for Cloud Version
+                </motion.a>
+
+              </div>
             </motion.div>
 
 
             {/* DESKTOP VERSION */}
             <motion.div
-              whileHover={{ y: -8 }}
-              className="glass rounded-2xl p-8 flex flex-col justify-between group"
+              whileHover={{ y: -6 }}
+              className="glass rounded-2xl overflow-hidden flex flex-col backdrop-blur-xl bg-white/5 border border-white/10"
             >
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <FiDownload className="text-primary-500 w-6 h-6" />
-                  <h3 className="text-2xl font-bold text-foreground">
-                    Desktop Version
-                  </h3>
-                </div>
 
-                <p className="text-muted-foreground text-sm mb-6">
-                  A privacy-first desktop application where your documents remain fully under your control.
-                </p>
-
-                <ul className="space-y-3 text-sm text-muted-foreground">
-                  <li>🔒 Documents never leave your computer</li>
-                  <li>💻 Fully local document processing</li>
-                  <li>📁 Ideal for confidential or sensitive data</li>
-                  <li>⚡ Fast performance with local storage</li>
-                  <li>📴 Core functionality works offline</li>
-                </ul>
+              {/* Card Header */}
+              <div className="px-8 py-5 border-b border-white/10 bg-white/[0.03]">
+                <h3 className="text-lg font-bold">
+                  <span className="text-foreground">Desktop </span>
+                  <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
+                    Version
+                  </span>
+                </h3>
               </div>
 
-              <motion.a
-                href="/desktop-pricing"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-8 flex items-center justify-center gap-3 px-6 py-4 rounded-full 
-                          border-2 border-[#7C7CFF]/50 
-                          text-white font-semibold 
-                          hover:border-[#00E5FF] 
-                          hover:bg-[#00E5FF]/10 
-                          transition-all duration-300"
-              >
-                <FiDownload className="group-hover:animate-bounce" />
-                Get Desktop Version
-              </motion.a>
+              {/* Card Body */}
+              <div className="p-8 flex flex-col justify-between flex-1">
+
+                <div>
+                  <p className="text-muted-foreground text-sm mb-6">
+                    A privacy-first desktop application where your documents remain fully under your control.
+                  </p>
+
+                  <ul className="space-y-3 text-sm text-muted-foreground">
+                    {[
+                      "Documents never leave your computer",
+                      "Fully local document processing",
+                      "Ideal for confidential or sensitive data",
+                      "Fast performance with local storage",
+                      "Core functionality works offline",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--primary-500)] flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <motion.a
+                  href="/desktop-pricing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.96 }}
+                  className="mt-8 flex items-center justify-center px-6 py-4 rounded-full 
+                            border border-primary-500/40 
+                            text-primary-500 font-semibold 
+                            hover:bg-primary-500/10 hover:border-primary-500
+                            transition-all duration-300"
+                >
+                  Get Desktop Version
+                </motion.a>
+
+              </div>
             </motion.div>
 
           </motion.div>
