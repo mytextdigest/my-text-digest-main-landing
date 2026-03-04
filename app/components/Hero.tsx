@@ -203,7 +203,7 @@ export default function Hero() {
 
               {/* Card Header */}
               <div className="px-8 py-5 border-b border-white/10 bg-white/[0.03]">
-                <h3 className="text-lg font-bold">
+                <h3 className="text-2xl font-bold">
                   <span className="text-foreground">Cloud </span>
                   <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
                     Version
@@ -219,7 +219,7 @@ export default function Hero() {
                     Access My Text Digest from anywhere with secure cloud-powered document intelligence.
                   </p>
 
-                  <ul className="space-y-3 text-sm text-muted-foreground">
+                  <ul className="space-y-3 text-sm font-bold text-muted-foreground">
                     {[
                       "Instant AI answers from uploaded documents",
                       "Access your documents from any device",
@@ -245,7 +245,7 @@ export default function Hero() {
                             bg-primary-600 hover:bg-primary-700 
                             text-white font-semibold transition-all duration-300 glow-primary"
                 >
-                  Sign Up for Cloud Version
+                  Sign Up Now
                 </motion.a>
 
               </div>
@@ -260,7 +260,7 @@ export default function Hero() {
 
               {/* Card Header */}
               <div className="px-8 py-5 border-b border-white/10 bg-white/[0.03]">
-                <h3 className="text-lg font-bold">
+                <h3 className="text-2xl font-bold">
                   <span className="text-foreground">Desktop </span>
                   <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
                     Version
@@ -276,7 +276,7 @@ export default function Hero() {
                     A privacy-first desktop application where your documents remain fully under your control.
                   </p>
 
-                  <ul className="space-y-3 text-sm text-muted-foreground">
+                  <ul className="space-y-3 text-sm font-bold text-muted-foreground">
                     {[
                       "Documents never leave your computer",
                       "Fully local document processing",
@@ -304,7 +304,7 @@ export default function Hero() {
                             hover:bg-primary-500/10 hover:border-primary-500
                             transition-all duration-300"
                 >
-                  Get Desktop Version
+                  Sign Up Now
                 </motion.a>
 
               </div>
