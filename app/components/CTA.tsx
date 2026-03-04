@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { FiDownload, FiChevronRight, FiMonitor } from 'react-icons/fi';
+import { FiDownload, FiChevronRight, FiMonitor, FiPlay } from 'react-icons/fi';
 
 export default function CTA() {
   const platforms = [
@@ -84,7 +84,7 @@ export default function CTA() {
           className="max-w-5xl mx-auto text-center"
         >
           {/* Badge */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -94,7 +94,7 @@ export default function CTA() {
             <span className="px-6 py-3 rounded-full border-2 border-[#00E5FF]/50 bg-[#00E5FF]/10 text-[#00E5FF] text-sm font-semibold backdrop-blur-sm">
               💥 Final Conversion
             </span>
-          </motion.div>
+          </motion.div> */}
 
           {/* Main Headline */}
           <motion.h2
@@ -106,7 +106,7 @@ export default function CTA() {
           >
             <span className="text-white">Turn Your Documents</span>
             <br />
-            <span className="bg-gradient-to-r from-[#00E5FF] via-[#7C7CFF] to-[#00E5FF] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
               Into Answers.
             </span>
           </motion.h2>
@@ -119,37 +119,48 @@ export default function CTA() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-[#EDEDED]/80 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            Join thousands of professionals who trust My Text Digest for private, powerful document intelligence.
+            Join thousands of professionals who trust My Text Digest for powerful document intelligence.
           </motion.p>
 
           {/* Download Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12"
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            {/* Primary CTA */}
+            {/* Web Version */}
             <motion.a
-              href="#"
+              href="/web-pricing"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative px-10 py-5 rounded-full bg-gradient-to-r from-[#00E5FF] to-[#7C7CFF] text-white font-bold text-lg shadow-2xl shadow-[#00E5FF]/50 hover:shadow-[#00E5FF]/70 transition-all duration-300 flex items-center space-x-3"
+              className="group flex items-center space-x-3 px-8 py-4 rounded-full 
+                        bg-primary-600 hover:bg-primary-700 
+                        text-white font-semibold text-lg 
+                        transition-all duration-300 glow-primary"
             >
-              <FiDownload className="w-6 h-6 group-hover:animate-bounce" />
-              <span>Download for Free</span>
-              <FiChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <FiPlay className="w-5 h-5" />
+              <span>Sign Up for Cloud Version</span>
             </motion.a>
 
-            {/* Secondary CTA */}
+            {/* Desktop Version */}
             <motion.a
-              href="#"
+              href="/desktop-pricing"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 rounded-full border-2 border-[#7C7CFF]/50 text-white font-bold text-lg hover:border-[#00E5FF] hover:bg-[#00E5FF]/10 transition-all duration-300"
+              className="group flex items-center space-x-3 px-8 py-4 rounded-full 
+                        border-2 border-[#7C7CFF]/50 
+                        text-white font-semibold text-lg 
+                        hover:border-[#00E5FF] 
+                        hover:bg-[#00E5FF]/10 
+                        transition-all duration-300"
             >
-              Join Early Access
+              <FiDownload className="w-5 h-5 group-hover:animate-bounce" />
+              <span>Sign Up For Desktop Version</span>
             </motion.a>
           </motion.div>
 
@@ -159,7 +170,7 @@ export default function CTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex flex-wrap items-center justify-center gap-8"
+            className="flex flex-wrap items-center justify-center gap-8 mt-7"
           >
             {platforms.map((platform, index) => (
               <motion.div
@@ -177,7 +188,7 @@ export default function CTA() {
           </motion.div>
 
           {/* Trust Indicators */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -200,7 +211,7 @@ export default function CTA() {
               <div className="w-2 h-2 rounded-full bg-[#7C7CFF]" />
               <span>Instant Setup</span>
             </div>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
 

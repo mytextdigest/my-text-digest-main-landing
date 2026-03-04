@@ -6,7 +6,7 @@ import Features from './components/Features';
 // import Privacy from './components/Privacy';
 // import DesktopApp from './components/DesktopApp';
 import UseCases from './components/UseCases';
-// import CTA from './components/CTA';
+import CTA from './components/CTA';
 import Footer from './components/Footer';
 
 export default function Home() {
@@ -16,13 +16,15 @@ export default function Home() {
       <Hero />
       <Features />
       <UseCases />
+      <CTA />
       <Footer /> 
+
       {/* <HowItWorks />
       
       <Privacy />
       <DesktopApp />
       
-      <CTA />
+      
       <Footer /> */}
     </div>
   );

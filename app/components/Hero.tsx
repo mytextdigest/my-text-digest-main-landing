@@ -167,7 +167,7 @@ export default function Hero() {
 
 
           {/* Highlights */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -185,7 +185,7 @@ export default function Hero() {
                 </span>
               </motion.div>
             ))}
-          </motion.div>
+          </motion.div> */}
 
           {/* CTAs */}
           <motion.div
@@ -207,7 +207,7 @@ export default function Hero() {
                         transition-all duration-300 glow-primary"
             >
               <FiPlay className="w-5 h-5" />
-              <span>Sign Up for Web Version</span>
+              <span>Sign Up for Cloud Version</span>
             </motion.a>
 
             {/* Desktop Version */}

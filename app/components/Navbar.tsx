@@ -27,7 +27,15 @@ export default function Navbar() {
     },
     {
       "name": "Use Cases",
-      "link": "/#use-case"
+      "link": "/#use-cases"
+    },
+    {
+      "name": "Desktop Pricing",
+      "link": "/desktop-pricing"
+    },
+    {
+      "name": "Cloud Pricing",
+      "link": "/web-pricing"
     },
     {
       "name": "Privacy",
@@ -50,20 +58,22 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
 
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2"
-          >
-            <Image
-              src="/logo.png"
-              alt="My Text Digest Logo"
-              width={40}
-              height={40}
-              className="object-contain"
-            />
-            <span className="text-xl font-bold text-foreground">
-              My Text Digest
-            </span>
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <Link
+              href="/"
+              className="flex items-center space-x-2 cursor-pointer"
+            >
+              <Image
+                src="/logo.png"
+                alt="My Text Digest Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
+              <span className="text-xl font-bold text-foreground">
+                My Text Digest
+              </span>
+            </Link>
           </motion.div>
 
           {/* Center Navigation */}

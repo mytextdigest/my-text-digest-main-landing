@@ -6,6 +6,7 @@ import { FiArrowRight } from 'react-icons/fi';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import type { Engine } from '@tsparticles/engine';
+import PageLayout from '../components/PageLayout';
 
 interface Plan {
   id: string;
@@ -48,111 +49,113 @@ export default function DesktopPricingPage() {
   );
 
   return (
-    <section className="relative py-24 overflow-hidden bg-gradient-to-b from-[#05060A] via-[#0B1020] to-[#05060A]">
+    <PageLayout>
+      <section className="relative py-24 overflow-hidden bg-gradient-to-b from-[#05060A] via-[#0B1020] to-[#05060A]">
 
-      {/* Particles Background */}
-      {init && (
-        <div className="absolute inset-0 z-0">
-          <Particles
-            id="desktopPricingParticles"
-            options={{
-              particles: {
-                number: { value: 60 },
-                color: { value: ['#3b82f6', '#2563eb'] },
-                size: { value: { min: 1, max: 3 } },
-                opacity: { value: { min: 0.3, max: 0.6 } },
-                move: { enable: true, speed: 1 },
-              },
-            }}
-          />
-        </div>
-      )}
+        {/* Particles Background */}
+        {init && (
+          <div className="absolute inset-0 z-0">
+            <Particles
+              id="desktopPricingParticles"
+              options={{
+                particles: {
+                  number: { value: 60 },
+                  color: { value: ['#3b82f6', '#2563eb'] },
+                  size: { value: { min: 1, max: 3 } },
+                  opacity: { value: { min: 0.3, max: 0.6 } },
+                  move: { enable: true, speed: 1 },
+                },
+              }}
+            />
+          </div>
+        )}
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <div className="container mx-auto px-6 lg:px-12 relative z-10">
 
-        {/* Header */}
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium inline-block mb-4">
-            💻 Desktop Plans
-          </span>
-
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-foreground">My Text Digest </span>
-            <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
-              Desktop Pricing
+          {/* Header */}
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium inline-block mb-4">
+              💻 Desktop Plans
             </span>
-          </h2>
 
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            License My Text Digest Desktop with flexible billing options.
-          </p>
-        </motion.div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <span className="text-foreground">My Text Digest </span>
+              <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
+                Desktop Pricing
+              </span>
+            </h2>
 
-        {/* Billing Toggle */}
-        <div className="flex justify-center mb-16">
-            <div className="relative grid grid-cols-2 w-64 bg-[#0B1020]/60 border border-primary-500/20 rounded-full p-1">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              License My Text Digest Desktop with flexible billing options.
+            </p>
+          </motion.div>
 
-                {/* Sliding Background */}
-                <motion.div
-                layout
-                transition={{ type: 'spring', stiffness: 500, damping: 35 }}
-                className="absolute top-1 left-1 bottom-1 w-[calc(50%-4px)] rounded-full bg-primary-600"
-                animate={{
-                    x: billing === 'month' ? 0 : '100%',
-                }}
-                />
+          {/* Billing Toggle */}
+          <div className="flex justify-center mb-16">
+              <div className="relative grid grid-cols-2 w-64 bg-[#0B1020]/60 border border-primary-500/20 rounded-full p-1">
 
-                {/* Monthly */}
-                <button
-                onClick={() => setBilling('month')}
-                className={`relative z-10 py-2 text-sm font-semibold rounded-full transition ${
-                    billing === 'month'
-                    ? 'text-white bg-[var(--primary-700)]'
-                    : 'text-muted-foreground hover:text-white bg-transparent'
-                }`}
-                >
-                Monthly
-                </button>
+                  {/* Sliding Background */}
+                  <motion.div
+                  layout
+                  transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+                  className="absolute top-1 left-1 bottom-1 w-[calc(50%-4px)] rounded-full bg-primary-600"
+                  animate={{
+                      x: billing === 'month' ? 0 : '100%',
+                  }}
+                  />
 
-                {/* Yearly */}
-                <button
-                onClick={() => setBilling('year')}
-                className={`relative z-10 py-2 text-sm font-semibold rounded-full transition ${
-                    billing === 'year'
-                    ? 'text-white bg-[var(--primary-700)]'
-                    : 'text-muted-foreground hover:text-white bg-transparent'
-                }`}
-                >
-                Yearly
-                </button>
+                  {/* Monthly */}
+                  <button
+                  onClick={() => setBilling('month')}
+                  className={`relative z-10 py-2 text-sm font-semibold rounded-full transition ${
+                      billing === 'month'
+                      ? 'text-white bg-[var(--primary-700)]'
+                      : 'text-muted-foreground hover:text-white bg-transparent'
+                  }`}
+                  >
+                  Monthly
+                  </button>
 
-            </div>
+                  {/* Yearly */}
+                  <button
+                  onClick={() => setBilling('year')}
+                  className={`relative z-10 py-2 text-sm font-semibold rounded-full transition ${
+                      billing === 'year'
+                      ? 'text-white bg-[var(--primary-700)]'
+                      : 'text-muted-foreground hover:text-white bg-transparent'
+                  }`}
+                  >
+                  Yearly
+                  </button>
+
+              </div>
+          </div>
+
+          {/* Plans */}
+          <AnimatePresence mode="wait">
+              <motion.div
+                  key={billing}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -40 }}
+                  transition={{ duration: 0.4 }}
+                  className="max-w-md mx-auto"
+              >
+                  {loading
+                  ? <SkeletonCard />
+                  : filteredPlans.map((plan) => (
+                      <PlanCard key={plan.id} plan={plan} />
+                      ))}
+              </motion.div>
+          </AnimatePresence>
+
         </div>
-
-        {/* Plans */}
-        <AnimatePresence mode="wait">
-            <motion.div
-                key={billing}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -40 }}
-                transition={{ duration: 0.4 }}
-                className="max-w-md mx-auto"
-            >
-                {loading
-                ? <SkeletonCard />
-                : filteredPlans.map((plan) => (
-                    <PlanCard key={plan.id} plan={plan} />
-                    ))}
-            </motion.div>
-        </AnimatePresence>
-
-      </div>
-    </section>
+        </section>
+    </PageLayout>
   );
 }
 
@@ -204,7 +207,10 @@ function PlanCard({ plan }: { plan: Plan }) {
 }
 
 function formatPrice(cents: number, currency: string) {
-  return `${currency} ${(cents / 100).toFixed(2)}`;
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency,
+  }).format(cents / 100);
 }
 
 
