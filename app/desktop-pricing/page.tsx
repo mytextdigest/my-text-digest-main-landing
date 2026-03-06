@@ -7,6 +7,7 @@ import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import type { Engine } from '@tsparticles/engine';
 import PageLayout from '../components/PageLayout';
+import BYOKModal from '../components/BYOKModal';
 
 interface Plan {
   id: string;
@@ -23,6 +24,8 @@ export default function DesktopPricingPage() {
   const [billing, setBilling] = useState<'month' | 'year'>('month');
   const [init, setInit] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [byokOpen, setByokOpen] = useState(false);
+
 
   useEffect(() => {
     initParticlesEngine(async (engine: Engine) => {
@@ -92,6 +95,16 @@ export default function DesktopPricingPage() {
             </p>
           </motion.div>
 
+          <div className="flex justify-center mb-6">
+            <button
+              onClick={() => setByokOpen(true)}
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium cursor-pointer rounded-full border border-primary-500/30 text-primary-500 hover:bg-primary-500/10 transition"
+            >
+              <FiKey className="w-4 h-4" />
+              What is Bring Your Own OpenAI Key?
+            </button>
+          </div>
+
           {/* Billing Toggle */}
           <div className="flex justify-center mb-16">
             <div className="relative grid grid-cols-2 w-64 bg-[#0B1020]/60 border border-primary-500/20 rounded-full p-1">
@@ -150,6 +163,7 @@ export default function DesktopPricingPage() {
 
         </div>
       </section>
+      <BYOKModal open={byokOpen} onClose={() => setByokOpen(false)} />
     </PageLayout>
   );
 }
@@ -197,6 +211,10 @@ function PlanCard({ plan }: { plan: Plan }) {
             Bring Your Own Open AI API Key
           </li>
         </ul>
+
+        <p className="text-xs text-muted-foreground/80 text-center">
+          AI usage costs are billed directly by your AI provider based on your API usage.
+        </p>
 
         <a
           href="https://my-text-digest-desktop-licensing.vercel.app/auth/signup"
