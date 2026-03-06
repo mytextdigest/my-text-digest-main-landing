@@ -13,7 +13,7 @@ export default function Footer() {
       { name: 'Desktop Version Pricing', href: '/desktop-pricing' },
     ],
     company: [
-      { name: 'About Us', href: '#about' },
+      { name: 'About Us', href: '/about' },
     ],
     resources: [
       { name: 'Help & Support', href: '/help' },
