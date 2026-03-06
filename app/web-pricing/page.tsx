@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiHardDrive, FiLock, FiZap, FiKey, FiCloud } from 'react-icons/fi';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import type { Engine } from '@tsparticles/engine';
@@ -79,8 +79,9 @@ export default function PricingPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium inline-block mb-4">
-              💼 Cloud Plans
+            <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium inline-flex items-center gap-2 mb-4">
+              <FiCloud className="w-4 h-4" />
+              Cloud Plans
             </span>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -91,7 +92,7 @@ export default function PricingPage() {
             </h2>
 
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Choose the plan that fits your workflow.
+              Choose the plan that fits your workflow. The platform follows a <span className='font-bold'>Bring Your Own Open AI Key</span> model, allowing you to securely use your own AI API key for document processing and analysis.
             </p>
           </motion.div>
 
@@ -185,10 +186,26 @@ function PlanCard({ plan }: { plan: Plan }) {
           </span>
         </div>
 
-        <ul className="text-sm text-muted-foreground space-y-2">
-          <li>📦 {plan.storageLimitGb} GB Storage</li>
-          <li>🔐 Secure & Private</li>
-          <li>⚡ Fast Web Access</li>
+        <ul className="text-sm text-left text-muted-foreground space-y-2">
+          <li className="flex items-center justify-center gap-2">
+            <FiHardDrive className="w-4 h-4 text-primary-500" />
+            {plan.storageLimitGb} GB Storage
+          </li>
+
+          <li className="flex items-center justify-center gap-2">
+            <FiLock className="w-4 h-4 text-primary-500" />
+            Secure and Private Workspace
+          </li>
+
+          <li className="flex items-center justify-center gap-2">
+            <FiZap className="w-4 h-4 text-primary-500" />
+            Fast Web Access
+          </li>
+
+          <li className="flex items-center justify-center gap-2">
+            <FiKey className="w-4 h-4 text-primary-500" />
+            Bring Your Own Open AI API Key
+          </li>
         </ul>
 
         <a

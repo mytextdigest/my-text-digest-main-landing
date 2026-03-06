@@ -129,7 +129,7 @@ export default function UseCases() {
             className="inline-block mb-4"
           >
             <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium">
-              🎯 Real-World Applications
+              Real-World Applications
             </span>
           </motion.div>
 
@@ -183,7 +183,7 @@ export default function UseCases() {
                         style={{ color: useCase.color }}
                       />
                     </div>
-                    <span className="text-3xl">{useCase.emoji}</span>
+                    {/* <span className="text-3xl">{useCase.emoji}</span> */}
                   </div>
 
                   {/* Title */}

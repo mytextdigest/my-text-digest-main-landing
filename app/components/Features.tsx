@@ -16,51 +16,59 @@ import {
 export default function Features() {
   const features = [
     {
-      icon: FiZap,
-      title: 'Instant Question Answering',
-      description: 'Get precise answers from your documents in milliseconds with our advanced AI engine.',
+      icon: FiLayers,
+      title: 'Project Chat (Multi-Document Intelligence)',
+      description:
+        'Analyze and compare insights across multiple documents within a project workspace to uncover deeper connections and patterns.',
       color: '#00E5FF',
     },
     {
-      icon: FiLayers,
-      title: 'Multi-Document Intelligence',
-      description: 'Query across multiple documents simultaneously for comprehensive insights.',
+      icon: FiZap,
+      title: 'AI Document Chat',
+      description:
+        'Ask questions directly within a document and receive precise, context-aware answers instantly.',
       color: '#7C7CFF',
     },
     {
       icon: FiTarget,
-      title: 'Context-Aware Answers',
-      description: 'AI understands the context and nuances of your documents for accurate responses.',
+      title: 'Smart Document Summaries',
+      description:
+        'Convert lengthy documents into structured summaries that highlight the most important insights.',
       color: '#00E5FF',
+    },
+    {
+      icon: FiLayers,
+      title: 'Project-Based Workspaces',
+      description:
+        'Organize documents by project to maintain clear context and focused knowledge exploration.',
+      color: '#7C7CFF',
     },
     {
       icon: FiEye,
-      title: 'Source Highlighting',
-      description: 'See exactly where answers come from with automatic source highlighting.',
-      color: '#7C7CFF',
-    },
-    {
-      icon: FiClock,
-      title: 'Blazing Fast Responses',
-      description: 'Optimized performance delivers instant results without any delay.',
-      color: '#00E5FF',
-    },
-    {
-      icon: FiWifiOff,
-      title: 'Offline / Private Mode',
-      description: 'Work completely offline with full functionality and zero internet dependency.',
-      color: '#7C7CFF',
-    },
-    {
-      icon: FiCloud,
-      title: 'Zero Cloud Uploads',
-      description: 'Your documents never leave your device. Complete local processing guaranteed.',
+      title: 'Structured Knowledge Layer',
+      description:
+        'Documents, summaries, and insights stay organized as a persistent knowledge base that grows over time.',
       color: '#00E5FF',
     },
     {
       icon: FiLock,
-      title: 'Encrypted Local Storage',
-      description: 'Military-grade encryption protects your data at rest on your local system.',
+      title: 'Privacy-First Architecture',
+      description:
+        'Project-level isolation ensures documents remain secure and confined to their intended workspace.',
+      color: '#7C7CFF',
+    },
+    {
+      icon: FiCloud,
+      title: 'Desktop or Cloud Flexibility',
+      description:
+        'Choose how you deploy the platform - locally on Desktop or through secure Cloud access across devices.',
+      color: '#00E5FF',
+    },
+    {
+      icon: FiClock,
+      title: 'Fast AI Processing',
+      description:
+        'Optimized AI processing delivers quick responses and efficient document analysis.',
       color: '#7C7CFF',
     },
   ];
@@ -96,7 +104,7 @@ export default function Features() {
             className="inline-block mb-4"
           >
             <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium">
-              ⚡ Power Meets Simplicity
+              Power Meets Simplicity
             </span>
           </motion.div>
 

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiMonitor, FiLock, FiFolder, FiKey } from 'react-icons/fi';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import type { Engine } from '@tsparticles/engine';
@@ -24,17 +24,15 @@ export default function DesktopPricingPage() {
   const [init, setInit] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  // Initialize particles
   useEffect(() => {
     initParticlesEngine(async (engine: Engine) => {
       await loadSlim(engine);
     }).then(() => setInit(true));
   }, []);
 
-  // Fetch desktop plans
   useEffect(() => {
     setLoading(true);
-  
+
     fetch('/api/desktop-plans')
       .then((res) => res.json())
       .then((data) => {
@@ -52,7 +50,6 @@ export default function DesktopPricingPage() {
     <PageLayout>
       <section className="relative py-24 overflow-hidden bg-gradient-to-b from-[#05060A] via-[#0B1020] to-[#05060A]">
 
-        {/* Particles Background */}
         {init && (
           <div className="absolute inset-0 z-0">
             <Particles
@@ -78,8 +75,9 @@ export default function DesktopPricingPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium inline-block mb-4">
-              💻 Desktop Plans
+            <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium inline-flex items-center gap-2 mb-4">
+              <FiMonitor className="w-4 h-4" />
+              Desktop Plans
             </span>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -90,81 +88,75 @@ export default function DesktopPricingPage() {
             </h2>
 
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              License My Text Digest Desktop with flexible billing options.
+              License My Text Digest Desktop with flexible billing options. The desktop platform follows a <span className='font-bold'>Bring Your Own Open AI Key</span> model, allowing you to securely use your own AI API key for document analysis.
             </p>
           </motion.div>
 
           {/* Billing Toggle */}
           <div className="flex justify-center mb-16">
-              <div className="relative grid grid-cols-2 w-64 bg-[#0B1020]/60 border border-primary-500/20 rounded-full p-1">
+            <div className="relative grid grid-cols-2 w-64 bg-[#0B1020]/60 border border-primary-500/20 rounded-full p-1">
 
-                  {/* Sliding Background */}
-                  <motion.div
-                  layout
-                  transition={{ type: 'spring', stiffness: 500, damping: 35 }}
-                  className="absolute top-1 left-1 bottom-1 w-[calc(50%-4px)] rounded-full bg-primary-600"
-                  animate={{
-                      x: billing === 'month' ? 0 : '100%',
-                  }}
-                  />
+              <motion.div
+                layout
+                transition={{ type: 'spring', stiffness: 500, damping: 35 }}
+                className="absolute top-1 left-1 bottom-1 w-[calc(50%-4px)] rounded-full bg-primary-600"
+                animate={{
+                  x: billing === 'month' ? 0 : '100%',
+                }}
+              />
 
-                  {/* Monthly */}
-                  <button
-                  onClick={() => setBilling('month')}
-                  className={`relative z-10 py-2 text-sm font-semibold rounded-full transition ${
-                      billing === 'month'
-                      ? 'text-white bg-[var(--primary-700)]'
-                      : 'text-muted-foreground hover:text-white bg-transparent'
-                  }`}
-                  >
-                  Monthly
-                  </button>
+              <button
+                onClick={() => setBilling('month')}
+                className={`relative z-10 py-2 text-sm font-semibold rounded-full transition ${
+                  billing === 'month'
+                    ? 'text-white bg-[var(--primary-700)]'
+                    : 'text-muted-foreground hover:text-white bg-transparent'
+                }`}
+              >
+                Monthly
+              </button>
 
-                  {/* Yearly */}
-                  <button
-                  onClick={() => setBilling('year')}
-                  className={`relative z-10 py-2 text-sm font-semibold rounded-full transition ${
-                      billing === 'year'
-                      ? 'text-white bg-[var(--primary-700)]'
-                      : 'text-muted-foreground hover:text-white bg-transparent'
-                  }`}
-                  >
-                  Yearly
-                  </button>
+              <button
+                onClick={() => setBilling('year')}
+                className={`relative z-10 py-2 text-sm font-semibold rounded-full transition ${
+                  billing === 'year'
+                    ? 'text-white bg-[var(--primary-700)]'
+                    : 'text-muted-foreground hover:text-white bg-transparent'
+                }`}
+              >
+                Yearly
+              </button>
 
-              </div>
+            </div>
           </div>
 
           {/* Plans */}
           <AnimatePresence mode="wait">
-              <motion.div
-                  key={billing}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -40 }}
-                  transition={{ duration: 0.4 }}
-                  className="max-w-md mx-auto"
-              >
-                  {loading
-                  ? <SkeletonCard />
-                  : filteredPlans.map((plan) => (
-                      <PlanCard key={plan.id} plan={plan} />
-                      ))}
-              </motion.div>
+            <motion.div
+              key={billing}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -40 }}
+              transition={{ duration: 0.4 }}
+              className="max-w-md mx-auto"
+            >
+              {loading
+                ? <SkeletonCard />
+                : filteredPlans.map((plan) => (
+                    <PlanCard key={plan.id} plan={plan} />
+                  ))}
+            </motion.div>
           </AnimatePresence>
 
         </div>
-        </section>
+      </section>
     </PageLayout>
   );
 }
 
 function PlanCard({ plan }: { plan: Plan }) {
   return (
-    <motion.div
-      whileHover={{ y: -10 }}
-      className="relative group"
-    >
+    <motion.div whileHover={{ y: -10 }} className="relative group">
       <div className="glass rounded-2xl p-8 space-y-6 text-center transition-all duration-300">
 
         <h4 className="text-xl font-bold text-foreground">
@@ -185,9 +177,25 @@ function PlanCard({ plan }: { plan: Plan }) {
         </div>
 
         <ul className="text-sm text-muted-foreground space-y-2">
-          <li>💻 {plan.deviceLimit} Device License</li>
-          <li>🔒 Offline & Private Mode</li>
-          <li>📂 Local Document Processing</li>
+          <li className="flex items-center justify-center gap-2">
+            <FiMonitor className="w-4 h-4 text-primary-500" />
+            {plan.deviceLimit} Device License
+          </li>
+
+          <li className="flex items-center justify-center gap-2">
+            <FiLock className="w-4 h-4 text-primary-500" />
+            Offline and Private Mode
+          </li>
+
+          <li className="flex items-center justify-center gap-2">
+            <FiFolder className="w-4 h-4 text-primary-500" />
+            Local Document Processing
+          </li>
+
+          <li className="flex items-center justify-center gap-2">
+            <FiKey className="w-4 h-4 text-primary-500" />
+            Bring Your Own Open AI API Key
+          </li>
         </ul>
 
         <a
@@ -213,32 +221,26 @@ function formatPrice(cents: number, currency: string) {
   }).format(cents / 100);
 }
 
-
 function SkeletonCard() {
-    return (
-      <div className="glass rounded-2xl p-8 space-y-6 animate-pulse">
-  
-        {/* Title */}
-        <div className="h-6 bg-primary-500/20 rounded w-1/2 mx-auto" />
-  
-        {/* Description */}
-        <div className="space-y-2">
-          <div className="h-3 bg-primary-500/10 rounded w-3/4 mx-auto" />
-          <div className="h-3 bg-primary-500/10 rounded w-2/3 mx-auto" />
-        </div>
-  
-        {/* Price */}
-        <div className="h-10 bg-primary-500/20 rounded w-1/3 mx-auto" />
-  
-        {/* Features */}
-        <div className="space-y-2">
-          <div className="h-3 bg-primary-500/10 rounded w-2/3 mx-auto" />
-          <div className="h-3 bg-primary-500/10 rounded w-1/2 mx-auto" />
-          <div className="h-3 bg-primary-500/10 rounded w-3/4 mx-auto" />
-        </div>
-  
-        {/* Button */}
-        <div className="h-10 bg-primary-500/30 rounded-full w-2/3 mx-auto" />
+  return (
+    <div className="glass rounded-2xl p-8 space-y-6 animate-pulse">
+
+      <div className="h-6 bg-primary-500/20 rounded w-1/2 mx-auto" />
+
+      <div className="space-y-2">
+        <div className="h-3 bg-primary-500/10 rounded w-3/4 mx-auto" />
+        <div className="h-3 bg-primary-500/10 rounded w-2/3 mx-auto" />
       </div>
-    );
-  }
+
+      <div className="h-10 bg-primary-500/20 rounded w-1/3 mx-auto" />
+
+      <div className="space-y-2">
+        <div className="h-3 bg-primary-500/10 rounded w-2/3 mx-auto" />
+        <div className="h-3 bg-primary-500/10 rounded w-1/2 mx-auto" />
+        <div className="h-3 bg-primary-500/10 rounded w-3/4 mx-auto" />
+      </div>
+
+      <div className="h-10 bg-primary-500/30 rounded-full w-2/3 mx-auto" />
+    </div>
+  );
+}
