@@ -130,7 +130,15 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-[#EDEDED]/40 text-sm"
           >
-            © {new Date().getFullYear()} My Text Digest. All rights reserved.
+            © {new Date().getFullYear()} My Text Digest. All rights reserved. A product of{" "}
+            <a
+              href="https://nexgeninnovation.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#00E5FF] hover:underline"
+            >
+              Next Generation Innovation L.L.C
+            </a>.
           </motion.p>
 
           {/* Social Links */}

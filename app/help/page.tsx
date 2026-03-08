@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
-import { FiDownload, FiHelpCircle, FiMail } from 'react-icons/fi';
+import { FiDownload, FiHelpCircle, FiMail, FiChevronDown } from 'react-icons/fi';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import type { Engine } from '@tsparticles/engine';
@@ -11,6 +11,7 @@ import PageLayout from '../components/PageLayout';
 
 export default function HelpPage() {
   const manualRef = useRef<HTMLDivElement>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const scrollToManual = () => {
     manualRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -216,33 +217,96 @@ export default function HelpPage() {
                     Frequently Asked Questions
                 </h2>
 
-                <div className="space-y-6 max-w-4xl mx-auto">
+                <div className="space-y-4 max-w-4xl mx-auto">
+
                     {[
                     {
-                        q: 'Is my data private?',
-                        a: 'Yes. Desktop documents remain on your machine. Web version uses secure processing.',
+                        q: "What is My Text Digest?",
+                        a: "My Text Digest is an AI powered platform that lets you ask questions and extract insights directly from your documents instead of manually searching through them.",
                     },
                     {
-                        q: 'Does the desktop version work offline?',
-                        a: 'Yes. Core functionality is designed to work offline with local processing.',
+                        q: "Do I need an API key to use My Text Digest?",
+                        a: "Yes. My Text Digest requires users to provide their own OpenAI API key to run the platform.",
                     },
                     {
-                        q: 'What file formats are supported?',
-                        a: 'PDF, Word, PPT, Excel, text files, and technical documentation formats.',
+                        q: "What does Bring Your Own API Key mean?",
+                        a: "Bring Your Own API Key means you connect your OpenAI API key to My Text Digest so the platform can process your documents using your own AI usage and billing.",
                     },
                     {
-                        q: 'Can I query multiple documents at once?',
-                        a: 'Yes. Multi-document intelligence is one of the core features.',
+                        q: "Why does My Text Digest require my own API key?",
+                        a: "This model gives users full control over API usage, billing, and limits instead of routing AI usage through the platform.",
+                    },
+                    {
+                        q: "Where do I get an OpenAI API key?",
+                        a: "You can generate an API key directly from your account at OpenAI through their developer dashboard.",
+                    },
+                    {
+                        q: "Do I pay My Text Digest for AI usage?",
+                        a: "No. AI usage costs are billed directly by OpenAI through your own API key. My Text Digest does not add additional markup to API usage.",
+                    },
+                    {
+                        q: "Is my API key stored securely?",
+                        a: "Yes. Your API key is stored securely and is only used to process requests between My Text Digest and OpenAI.",
+                    },
+                    {
+                        q: "Can I change or remove my API key later?",
+                        a: "Yes. You can update or remove your API key at any time from your settings.",
+                    },
+                    {
+                        q: "Which AI providers are supported?",
+                        a: "Currently My Text Digest supports OpenAI API keys. Support for additional providers may be added in future versions.",
+                    },
+                    {
+                        q: "Do I need technical knowledge to use an API key?",
+                        a: "No. Generating and adding an OpenAI API key typically takes only a few minutes and requires no programming experience.",
+                    },
+                    {
+                        q: "What types of documents can I upload?",
+                        a: "My Text Digest works with common document formats such as PDFs, reports, research papers, and technical documentation.",
+                    },
+                    {
+                        q: "Can I analyze multiple documents at once?",
+                        a: "Yes. You can upload multiple documents and interact with them as a single searchable knowledge base.",
+                    },
+                    {
+                        q: "Is my data private?",
+                        a: "Yes. My Text Digest is designed with privacy in mind and the desktop version ensures documents remain on your local device.",
+                    },
+                    {
+                        q: "Who is My Text Digest designed for?",
+                        a: "The platform is built for anyone working with large or complex documents including researchers, analysts, legal professionals, engineers, and students.",
                     },
                     ].map((item, index) => (
-                    <div key={index} className="glass rounded-xl p-6">
-                        <div className="flex items-center gap-2 mb-2 text-primary-500 font-semibold">
-                        <FiHelpCircle />
-                        {item.q}
+                    <div
+                        key={index}
+                        className="glass rounded-xl overflow-hidden"
+                    >
+                        <button
+                        onClick={() =>
+                            setOpenFaq(openFaq === index ? null : index)
+                        }
+                        className="w-full flex items-center justify-between p-6 text-left"
+                        >
+                        <div className="flex items-center gap-3 text-primary-500 font-semibold">
+                            <FiHelpCircle />
+                            {item.q}
                         </div>
-                        <p className="text-muted-foreground">{item.a}</p>
+
+                        <FiChevronDown
+                            className={`transition-transform ${
+                            openFaq === index ? "rotate-180" : ""
+                            }`}
+                        />
+                        </button>
+
+                        {openFaq === index && (
+                        <div className="px-6 pb-6 text-muted-foreground">
+                            {item.a}
+                        </div>
+                        )}
                     </div>
                     ))}
+
                 </div>
                 </div>
 

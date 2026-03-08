@@ -2,11 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { FiTarget, FiShield, FiZap, FiUsers } from 'react-icons/fi';
+import { FiTarget, FiShield, FiZap, FiUsers, FiBookOpen, FiCpu, FiLock, FiCompass, FiAward } from 'react-icons/fi';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import type { Engine } from '@tsparticles/engine';
 import PageLayout from '../components/PageLayout';
+import Link from 'next/link';
 
 export default function AboutPage() {
   const [init, setInit] = useState(false);
@@ -40,7 +41,7 @@ export default function AboutPage() {
     <PageLayout>
       <section className="relative overflow-hidden bg-gradient-to-b from-[#05060A] via-[#0B1020] to-[#05060A]">
 
-        {/* Subtle Glow Dots */}
+        {/* Glow Dots */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-20 w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
           <div className="absolute top-60 right-10 w-2 h-2 bg-primary-700 rounded-full animate-pulse" />
@@ -53,75 +54,165 @@ export default function AboutPage() {
           {/* HERO */}
           <div className="relative min-h-screen flex flex-col items-center justify-center text-center py-24 overflow-hidden">
 
-            {init && (
-              <div className="absolute inset-0 z-0">
-                <Particles
-                  id="aboutParticles"
-                  options={particlesConfig as any}
-                  className="absolute inset-0"
-                />
-              </div>
-            )}
-
-            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-primary-500/20 rounded-full blur-[150px] z-0" />
-
-            <div className="relative z-10 max-w-4xl">
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
-              >
-                <span className="text-foreground">About </span>
-                <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
-                  My Text Digest
-                </span>
-              </motion.h1>
-
-              <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
-                We built My Text Digest to transform how people interact with their documents —
-                turning static files into intelligent, conversational knowledge.
-              </p>
+          {init && (
+            <div className="absolute inset-0 z-0">
+              <Particles
+                id="aboutParticles"
+                options={particlesConfig as any}
+                className="absolute inset-0"
+              />
             </div>
+          )}
+
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-primary-500/20 rounded-full blur-[150px] z-0" />
+
+          <div className="relative z-10 max-w-3xl space-y-6">
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold"
+            >
+              <span className="text-foreground">About </span>
+              <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
+                My Text Digest
+              </span>
+            </motion.h1>
+
+            {/* Product Attribution */}
+            <div className="flex justify-center">
+              <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium">
+                A product of{" "}
+                <Link
+                  href="https://nexgeninnovation.com/"
+                  target="_blank"
+                  className="underline hover:text-primary-400"
+                >
+                  Next Generation Innovation L.L.C
+                </Link>
+              </span>
+            </div>
+
+            <h2 className="text-2xl font-semibold text-foreground">
+              Turning Documents Into Intelligent Knowledge
+            </h2>
+
+            <p className="text-muted-foreground text-lg">
+              Professionals work with hundreds of documents including research papers, reports,
+              contracts, and technical manuals. Finding the right information inside them is
+              often slow and inefficient.
+            </p>
+
+            <p className="text-muted-foreground text-lg">
+              My Text Digest transforms static documents into interactive knowledge.
+              Instead of manually searching through pages, users can ask questions and
+              receive precise answers directly from their documents.
+            </p>
+
+          </div>
           </div>
 
-          {/* OUR STORY */}
+          {/* WHY WE BUILT IT */}
           <div className="py-28">
             <div className="text-center mb-14">
-              <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium inline-block mb-4">
-                🚀 Our Story
-              </span>
+
+            <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium inline-flex items-center gap-2 mb-4">
+              <FiBookOpen className="w-4 h-4" />
+              Our Story
+            </span>
 
               <h2 className="text-4xl md:text-5xl font-bold">
                 <span className="text-foreground">Why We </span>
                 <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
-                  Built This
+                  Built It
                 </span>
               </h2>
             </div>
 
             <div className="max-w-3xl mx-auto glass rounded-2xl p-10 text-muted-foreground leading-relaxed space-y-6">
               <p>
-                Modern professionals deal with hundreds of documents — reports, research papers,
-                contracts, technical manuals, and internal knowledge bases.
+                Traditional document search relies on keywords and manual reading.
+                This makes research and analysis time consuming and prone to missed information.
               </p>
+
               <p>
-                Searching through them manually is slow, inefficient, and error-prone.
-                We believed documents should respond like intelligent systems — not static files.
-              </p>
-              <p>
-                That belief led to My Text Digest: a platform designed to make document
-                intelligence effortless, precise, and private.
+                My Text Digest was created to make document intelligence simple and conversational
+                so users can interact with information instead of searching for it.
               </p>
             </div>
           </div>
 
-          {/* CORE VALUES */}
+          {/* WHAT IT ENABLES */}
+          <div className="py-24">
+
+            <div className="text-center mb-16">
+
+              <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium inline-flex items-center gap-2 mb-4">
+                <FiCpu className="w-4 h-4" />
+                Capabilities
+              </span>
+
+              <h2 className="text-4xl md:text-5xl font-bold">
+                <span className="text-foreground">What My Text Digest </span>
+                <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
+                  Enables
+                </span>
+              </h2>
+            </div>
+
+            <div className="max-w-3xl mx-auto glass rounded-2xl p-10 text-muted-foreground leading-relaxed">
+              <ul className="list-disc list-inside space-y-3">
+                <li>Ask natural language questions across documents</li>
+                <li>Receive context aware answers instantly</li>
+                <li>Analyze multiple documents as a unified knowledge base</li>
+                <li>Extract insights from long or complex files in seconds</li>
+              </ul>
+            </div>
+
+          </div>
+
+          {/* PRIVACY SECTION */}
+          <div className="py-28">
+            <div className="text-center mb-14">
+
+              <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium inline-flex items-center gap-2 mb-4">
+                <FiLock className="w-4 h-4" />
+                Privacy
+              </span>
+
+              <h2 className="text-4xl md:text-5xl font-bold">
+                <span className="text-foreground">Built for </span>
+                <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
+                  Privacy and Control
+                </span>
+              </h2>
+            </div>
+
+            <div className="max-w-3xl mx-auto glass rounded-2xl p-10 text-muted-foreground leading-relaxed space-y-6">
+
+              <p>
+                My Text Digest supports both web and desktop environments so users can choose the
+                workflow that fits their privacy requirements.
+              </p>
+
+              <p>
+                The platform uses a Bring Your Own API Key model.
+                Users provide their OpenAI API key which allows them to control usage and billing
+                directly through their OpenAI account.
+              </p>
+
+            </div>
+
+          </div>
+
+          {/* CORE VALUES (UNCHANGED) */}
           <div className="py-24">
             <div className="text-center mb-16">
-              <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium inline-block mb-4">
-                💎 Our Values
-              </span>
+            <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium inline-flex items-center gap-2 mb-4">
+              <FiAward className="w-4 h-4" />
+              Our Values
+            </span>
 
               <h2 className="text-4xl md:text-5xl font-bold">
                 <span className="text-foreground">What We </span>
@@ -141,12 +232,12 @@ export default function AboutPage() {
                 {
                   icon: FiShield,
                   title: 'Privacy',
-                  desc: 'Your documents remain secure — especially in the desktop version.',
+                  desc: 'Your documents remain secure especially in the desktop version.',
                 },
                 {
                   icon: FiZap,
                   title: 'Performance',
-                  desc: 'Blazing-fast answers without compromising depth or clarity.',
+                  desc: 'Blazing fast answers without compromising depth or clarity.',
                 },
                 {
                   icon: FiUsers,
@@ -171,12 +262,14 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* FUTURE VISION */}
+          {/* VISION */}
           <div className="py-28">
             <div className="text-center mb-14">
-              <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium inline-block mb-4">
-                🔮 Looking Ahead
-              </span>
+
+            <span className="px-4 py-2 rounded-full border border-primary-500/30 text-primary-500 text-sm font-medium inline-flex items-center gap-2 mb-4">
+              <FiCompass className="w-4 h-4" />
+              Looking Ahead
+            </span>
 
               <h2 className="text-4xl md:text-5xl font-bold">
                 <span className="text-foreground">Our </span>
@@ -188,15 +281,16 @@ export default function AboutPage() {
 
             <div className="max-w-3xl mx-auto glass rounded-2xl p-10 text-muted-foreground leading-relaxed space-y-6">
               <p>
-                We envision a future where every document becomes interactive,
-                searchable, and intelligently connected.
+                We believe documents should not just store information. They should understand it.
               </p>
+
               <p>
-                Our goal is to continue building tools that empower knowledge workers
-                with clarity, speed, and confidence.
+                Our goal is to build tools that turn documents into intelligent systems that
+                respond to questions, surface insights, and make knowledge easier to use.
               </p>
+
               <p>
-                My Text Digest is just the beginning.
+                My Text Digest is the first step toward that future.
               </p>
             </div>
           </div>

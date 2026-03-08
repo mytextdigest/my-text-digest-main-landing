@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiX, FiKey } from 'react-icons/fi';
+import { FiX, FiKey, FiExternalLink } from 'react-icons/fi';
 
 interface BYOKModalProps {
   open: boolean;
@@ -47,31 +47,72 @@ export default function BYOKModal({ open, onClose }: BYOKModalProps) {
                 </h3>
               </div>
 
-              {/* Content */}
-              <div className="text-base font-semibold text-muted-foreground space-y-5 leading-relaxed">
+              {/* Explanation */}
+              <div className="text-base font-semibold text-muted-foreground space-y-4 leading-relaxed">
 
                 <p>
-                  My Text Digest follows a Bring Your Own Key (BYOK) model.
-                  You connect your own OpenAI API key to enable AI-powered
-                  document analysis and chat capabilities.
+                  My Text Digest follows a <strong>Bring Your Own Key (BYOK)</strong> model.
+                  You connect your own OpenAI API key to enable AI-powered document
+                  analysis and chat features.
                 </p>
 
                 <p>
-                  This model gives you full control over AI usage, billing,
-                  and provider configuration while keeping your API key
-                  securely managed within your workspace.
-                </p>
-
-                <p>
-                  AI usage costs are billed directly by OpenAI based on your
-                  API usage. The subscription fee only covers access to the
-                  My Text Digest platform and its infrastructure.
+                  This gives you full control over your AI usage and billing.
+                  AI usage costs are billed directly by OpenAI based on your API usage.
                 </p>
 
               </div>
 
-              <div className="mt-8 text-sm font-semibold text-muted-foreground">
-                You can add or update your API key anytime from your account settings.
+              {/* Steps */}
+              <div className="mt-6 space-y-3 text-base font-semibold text-muted-foreground">
+
+                <h4 className="text-lg font-bold text-foreground">
+                  How to get an OpenAI API Key
+                </h4>
+
+                <ol className="list-decimal list-inside space-y-2">
+
+                  <li>
+                    Visit{" "}
+                    <a
+                      href="https://platform.openai.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary-500 hover:underline"
+                    >
+                      platform.openai.com
+                    </a>{" "}
+                    and create an account.
+                  </li>
+
+                  <li>
+                    After logging in, go to <strong>API Keys</strong> and click
+                    <strong> "Create new secret key"</strong>.
+                  </li>
+
+                  <li>
+                    Copy the key and add billing details in your OpenAI account.
+                    You will then be able to use the key inside My Text Digest.
+                  </li>
+                </ol>
+
+              </div>
+
+              {/* Security Tip */}
+              <div className="mt-6 text-sm font-semibold text-muted-foreground">
+                Tip: Never share your API key publicly. Treat it like a password.
+              </div>
+
+              {/* Manual Link */}
+              <div className="mt-6">
+                <a
+                  href="/mytextdigest-desktop-user-manual.pdf"
+                  target="_blank"
+                  className="inline-flex items-center gap-2 text-primary-500 font-semibold hover:underline"
+                >
+                  Read the full setup guide
+                  <FiExternalLink className="w-4 h-4" />
+                </a>
               </div>
 
             </div>
