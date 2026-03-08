@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiGithub, FiTwitter, FiLinkedin, FiMail, FiLock, FiShield } from 'react-icons/fi';
+import { FiGithub, FiTwitter, FiLinkedin, FiMail, FiLock, FiShield, FiYoutube, FiFacebook } from 'react-icons/fi';
 import Image from 'next/image';
 
 export default function Footer() {
@@ -25,10 +25,9 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { icon: FiGithub, href: '#', label: 'GitHub' },
-    { icon: FiTwitter, href: '#', label: 'Twitter' },
-    { icon: FiLinkedin, href: '#', label: 'LinkedIn' },
-    { icon: FiMail, href: '#', label: 'Email' },
+    { icon: FiFacebook, href: 'https://www.facebook.com/profile.php?id=61586244181271', label: 'Facebook' },
+    { icon: FiLinkedin, href: 'https://www.linkedin.com/showcase/110473332/admin/dashboard/', label: 'LinkedIn' },
+    { icon: FiYoutube, href: 'https://www.youtube.com/@MyTextDigest', label: 'Youtube' },
   ];
 
   return (
@@ -164,7 +163,7 @@ export default function Footer() {
         </div>
 
         {/* Additional Info */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -174,7 +173,7 @@ export default function Footer() {
           <p className="text-[#EDEDED]/40 text-xs">
             Built with ❤️ for researchers, professionals, and knowledge workers worldwide
           </p>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Gradient Glow at Bottom */}
