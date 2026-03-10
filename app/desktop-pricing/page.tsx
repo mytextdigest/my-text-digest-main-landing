@@ -217,7 +217,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         </p>
 
         <a
-          href="https://my-text-digest-desktop-licensing.vercel.app/auth/signup"
+          href="https://desktop.mytextdigest.com/auth/signup"
           target="_blank"
           rel="noopener noreferrer"
           className="block px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white font-semibold transition-all duration-300 glow-primary hover:scale-105"

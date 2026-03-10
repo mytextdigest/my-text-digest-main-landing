@@ -226,7 +226,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         </p>
 
         <a
-          href="https://my-text-digest-saas.vercel.app/auth/signup"
+          href="https://cloud.mytextdigest.com/auth/signup"
           className="block px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white font-semibold transition-all duration-300 glow-primary hover:scale-105"
         >
           Sign Up Now <FiArrowRight className="inline ml-2" />
