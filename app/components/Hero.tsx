@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiDownload, FiPlay, FiFileText, FiLock, FiZap, FiCpu } from 'react-icons/fi';
+import { FiDownload, FiPlay, FiFileText, FiLock, FiZap, FiCpu, FiCheck } from 'react-icons/fi';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import type { Engine } from '@tsparticles/engine';
@@ -133,10 +133,10 @@ export default function Hero() {
             className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
           >
             {/* <span className="text-foreground">Ask Anything.</span> */}
-            <span className="text-foreground">Your Knowledge.</span>
+            <span className="text-foreground">Ask Anything.</span>
             <br />
             <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
-              Structured by Design. Accessible on Your Terms.
+            From Your Documents.
             </span>
           </motion.h1>
 
@@ -221,14 +221,14 @@ export default function Hero() {
 
                   <ul className="space-y-3 text-sm font-bold text-muted-foreground">
                     {[
-                      "Instant AI answers from uploaded documents",
-                      "Access your documents from any device",
-                      "Manage multiple projects and document sets",
-                      "Secure cloud infrastructure",
-                      "Perfect for collaboration and mobility",
+                      "Access documents from any device",
+                      "Project-based document organization",
+                      "Chat with your documents instantly",
+                      "Project-wise document chat",
+                      "Secure cloud storage",
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--primary-500)] flex-shrink-0" />
+                        <FiCheck className="mt-0.5 text-[var(--primary-500)] flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -278,14 +278,14 @@ export default function Hero() {
 
                   <ul className="space-y-3 text-sm font-bold text-muted-foreground">
                     {[
-                      "Documents never leave your computer",
+                      "Documents stay on your computer",
                       "Fully local document processing",
-                      "Ideal for confidential or sensitive data",
-                      "Fast performance with local storage",
-                      "Core functionality works offline",
+                      "Project-based document organization",
+                      "Chat with your documents instantly",
+                      "Project-wise document chat",
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--primary-500)] flex-shrink-0" />
+                        <FiCheck className="mt-0.5 text-[var(--primary-500)] flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}

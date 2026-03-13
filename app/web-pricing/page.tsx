@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiArrowRight, FiHardDrive, FiLock, FiZap, FiKey, FiCloud } from 'react-icons/fi';
+import { FiArrowRight, FiHardDrive, FiLock, FiZap, FiKey, FiCloud, FiCheck } from 'react-icons/fi';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import type { Engine } from '@tsparticles/engine';
@@ -199,25 +199,40 @@ function PlanCard({ plan }: { plan: Plan }) {
           </span>
         </div>
 
-        <ul className="text-sm text-left text-muted-foreground space-y-2">
-          <li className="flex items-center justify-center gap-2">
-            <FiHardDrive className="w-4 h-4 text-primary-500" />
-            {plan.storageLimitGb} GB Storage
+        <ul className="w-fit mx-auto text-left text-sm text-muted-foreground space-y-3">
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>{plan.storageLimitGb} GB Secure Storage</span>
           </li>
 
-          <li className="flex items-center justify-center gap-2">
-            <FiLock className="w-4 h-4 text-primary-500" />
-            Secure and Private Workspace
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Access from any device</span>
           </li>
 
-          <li className="flex items-center justify-center gap-2">
-            <FiZap className="w-4 h-4 text-primary-500" />
-            Fast Web Access
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Project-based document organization</span>
           </li>
 
-          <li className="flex items-center justify-center gap-2">
-            <FiKey className="w-4 h-4 text-primary-500" />
-            Bring Your Own Open AI API Key
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Chat with your documents</span>
+          </li>
+
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Project-wise document chat</span>
+          </li>
+
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Secure cloud workspace</span>
+          </li>
+
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Bring your own OpenAI API key</span>
           </li>
         </ul>
 

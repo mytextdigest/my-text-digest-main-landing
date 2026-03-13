@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiArrowRight, FiMonitor, FiLock, FiFolder, FiKey } from 'react-icons/fi';
+import { FiArrowRight, FiMonitor, FiLock, FiFolder, FiKey, FiCheck } from 'react-icons/fi';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import type { Engine } from '@tsparticles/engine';
@@ -190,26 +190,43 @@ function PlanCard({ plan }: { plan: Plan }) {
           </span>
         </div>
 
-        <ul className="text-sm text-muted-foreground space-y-2">
-          <li className="flex items-center justify-center gap-2">
-            <FiMonitor className="w-4 h-4 text-primary-500" />
-            {plan.deviceLimit} Device License
+        <ul className="w-fit mx-auto text-left text-sm text-muted-foreground space-y-3">
+
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>{plan.deviceLimit} Device License</span>
           </li>
 
-          <li className="flex items-center justify-center gap-2">
-            <FiLock className="w-4 h-4 text-primary-500" />
-            Offline and Private Mode
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Documents stay on your computer</span>
           </li>
 
-          <li className="flex items-center justify-center gap-2">
-            <FiFolder className="w-4 h-4 text-primary-500" />
-            Local Document Processing
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Fully local document processing</span>
           </li>
 
-          <li className="flex items-center justify-center gap-2">
-            <FiKey className="w-4 h-4 text-primary-500" />
-            Bring Your Own Open AI API Key
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Chat with your documents</span>
           </li>
+
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Project-wise document chat</span>
+          </li>
+
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Fast local performance</span>
+          </li>
+
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Bring your own OpenAI API key</span>
+          </li>
+
         </ul>
 
         <p className="text-xs text-muted-foreground/80 text-center">
