@@ -282,9 +282,9 @@ export default function Hero() {
 
                   <ul className="space-y-3 text-sm font-bold text-muted-foreground">
                     {[
-                      "Documents stay on your computer",
-                      "No cloud storage for your files",
-                      "Save and manage multiple documents easily",
+                      "No cloud. No sharing. No leaks.",
+                      "No one else sees your information.",
+                      "Fast, smart, and private.",
                       "Secure personal workspace for your files",
                       "Organize documents by projects",
                       "Chat with your documents using AI",

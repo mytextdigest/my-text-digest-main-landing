@@ -199,13 +199,19 @@ function PlanCard({ plan }: { plan: Plan }) {
 
           <li className="flex items-start gap-3">
             <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
-            <span>Documents stay on your computer</span>
+            <span>No cloud. No sharing. No leaks.</span>
           </li>
 
           <li className="flex items-start gap-3">
             <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
-            <span>No cloud storage for your files</span>
+            <span>No one else sees your information.</span>
           </li>
+
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Fast, smart, and private.</span>
+          </li>
+
 
           <li className="flex items-start gap-3">
             <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
