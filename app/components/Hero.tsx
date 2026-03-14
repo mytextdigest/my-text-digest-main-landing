@@ -221,11 +221,14 @@ export default function Hero() {
 
                   <ul className="space-y-3 text-sm font-bold text-muted-foreground">
                     {[
-                      "Access documents from any device",
-                      "Project-based document organization",
-                      "Chat with your documents instantly",
+                      "Access your documents from any device",
+                      "Secure personal workspace for your files",
+                      "Organize documents by projects",
+                      "Upload and manage multiple documents easily",
+                      "Chat with your documents using AI",
+                      "Ask questions and get instant answers from your files",
                       "Project-wise document chat",
-                      "Secure cloud storage",
+                      "Your data stays private to your account",
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <FiCheck className="mt-0.5 text-[var(--primary-500)] flex-shrink-0" />
@@ -233,6 +236,7 @@ export default function Hero() {
                       </li>
                     ))}
                   </ul>
+                  
                 </div>
 
                 <motion.a
@@ -279,10 +283,13 @@ export default function Hero() {
                   <ul className="space-y-3 text-sm font-bold text-muted-foreground">
                     {[
                       "Documents stay on your computer",
-                      "Fully local document processing",
-                      "Project-based document organization",
-                      "Chat with your documents instantly",
-                      "Project-wise document chat",
+                      "No cloud storage for your files",
+                      "Save and manage multiple documents easily",
+                      "Secure personal workspace for your files",
+                      "Organize documents by projects",
+                      "Chat with your documents using AI",
+                      "Ask questions and get answers from your files instantly",
+                      "Your data remains fully private",
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <FiCheck className="mt-0.5 text-[var(--primary-500)] flex-shrink-0" />
@@ -290,6 +297,7 @@ export default function Hero() {
                       </li>
                     ))}
                   </ul>
+
                 </div>
 
                 <motion.a

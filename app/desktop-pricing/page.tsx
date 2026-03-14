@@ -182,7 +182,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         </p>
 
         <div>
-          <span className="text-4xl font-extrabold text-foreground">
+          <span className="text-4xl font-extrabold text-foreground bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
             {formatPrice(plan.priceCents, plan.currency)}
           </span>
           <span className="text-sm text-muted-foreground">
@@ -194,7 +194,7 @@ function PlanCard({ plan }: { plan: Plan }) {
 
           <li className="flex items-start gap-3">
             <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
-            <span>{plan.deviceLimit} Device License</span>
+            <span>{plan.deviceLimit} device license</span>
           </li>
 
           <li className="flex items-start gap-3">
@@ -204,17 +204,32 @@ function PlanCard({ plan }: { plan: Plan }) {
 
           <li className="flex items-start gap-3">
             <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
-            <span>Fully local document processing</span>
+            <span>No cloud storage for your files</span>
           </li>
 
           <li className="flex items-start gap-3">
             <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
-            <span>Chat with your documents</span>
+            <span>Secure personal workspace</span>
           </li>
 
           <li className="flex items-start gap-3">
             <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
-            <span>Project-wise document chat</span>
+            <span>Save and manage multiple documents</span>
+          </li>
+
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Organize documents by projects</span>
+          </li>
+
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Chat with your documents using AI</span>
+          </li>
+
+          <li className="flex items-start gap-3">
+            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span>Ask questions and get answers from your files</span>
           </li>
 
           <li className="flex items-start gap-3">
@@ -224,7 +239,7 @@ function PlanCard({ plan }: { plan: Plan }) {
 
           <li className="flex items-start gap-3">
             <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
-            <span>Bring your own OpenAI API key</span>
+            <span>Use your own OpenAI API key</span>
           </li>
 
         </ul>
