@@ -202,52 +202,52 @@ function PlanCard({ plan }: { plan: Plan }) {
         <ul className="w-fit mx-auto text-left text-sm text-muted-foreground space-y-3">
 
           <li className="flex items-start gap-3">
-            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <FiCheck className="mt-0.5 text-2xl text-[var(--primary-500)] flex-shrink-0" />
             <span>{plan.storageLimitGb} GB secure document storage</span>
           </li>
 
           <li className="flex items-start gap-3">
-            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <FiCheck className="mt-0.5 text-2xl text-[var(--primary-500)] flex-shrink-0" />
             <span>Access your documents from any device</span>
           </li>
 
           <li className="flex items-start gap-3">
-            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <FiCheck className="mt-0.5 text-2xl text-[var(--primary-500)] flex-shrink-0" />
             <span>Secure personal workspace</span>
           </li>
 
           <li className="flex items-start gap-3">
-            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <FiCheck className="mt-0.5 text-2xl text-[var(--primary-500)] flex-shrink-0" />
             <span>Organize documents by projects</span>
           </li>
 
           <li className="flex items-start gap-3">
-            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <FiCheck className="mt-0.5 text-2xl text-[var(--primary-500)] flex-shrink-0" />
             <span>Upload and manage multiple documents</span>
           </li>
 
           <li className="flex items-start gap-3">
-            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <FiCheck className="mt-0.5 text-2xl text-[var(--primary-500)] flex-shrink-0" />
             <span>Chat with your documents using AI</span>
           </li>
 
           <li className="flex items-start gap-3">
-            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <FiCheck className="mt-0.5 text-2xl text-[var(--primary-500)] flex-shrink-0" />
             <span>Ask questions and get answers from your files</span>
           </li>
 
           <li className="flex items-start gap-3">
-            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <FiCheck className="mt-0.5 text-2xl text-[var(--primary-500)] flex-shrink-0" />
             <span>Project-wise document chat</span>
           </li>
 
           <li className="flex items-start gap-3">
-            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <FiCheck className="mt-0.5 text-2xl text-[var(--primary-500)] flex-shrink-0" />
             <span>Your data stays private to your account</span>
           </li>
 
           <li className="flex items-start gap-3">
-            <FiCheck className="mt-0.5 w-4 h-4 text-primary-500 flex-shrink-0" />
+            <FiCheck className="mt-0.5 text-2xl text-[var(--primary-500)] flex-shrink-0" />
             <span>Use your own OpenAI API key</span>
           </li>
 

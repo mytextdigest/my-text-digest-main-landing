@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiDownload, FiPlay, FiFileText, FiLock, FiZap, FiCpu, FiCheck } from 'react-icons/fi';
+import { FiCheck } from 'react-icons/fi';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import type { Engine } from '@tsparticles/engine';
@@ -20,38 +20,18 @@ export default function Hero() {
 
   const particlesConfig = {
     particles: {
-      number: {
-        value: 80,
-        density: {
-          enable: true,
-          value_area: 800,
-        },
-      },
-      color: {
-        value: ['#3b82f6', '#2563eb'],
-      },
-      shape: {
-        type: 'circle',
-      },
+      number: { value: 80, density: { enable: true, value_area: 800 } },
+      color: { value: ['#3b82f6', '#2563eb'] },
+      shape: { type: 'circle' },
       opacity: {
         value: 0.5,
         random: true,
-        anim: {
-          enable: true,
-          speed: 1,
-          opacity_min: 0.1,
-          sync: false,
-        },
+        anim: { enable: true, speed: 1, opacity_min: 0.1 },
       },
       size: {
         value: 3,
         random: true,
-        anim: {
-          enable: true,
-          speed: 2,
-          size_min: 0.1,
-          sync: false,
-        },
+        anim: { enable: true, speed: 2, size_min: 0.1 },
       },
       line_linked: {
         enable: true,
@@ -64,50 +44,27 @@ export default function Hero() {
         enable: true,
         speed: 1,
         direction: 'none',
-        random: false,
-        straight: false,
         out_mode: 'out',
-        bounce: false,
       },
     },
     interactivity: {
       detect_on: 'canvas',
       events: {
-        onhover: {
-          enable: true,
-          mode: 'grab',
-        },
-        onclick: {
-          enable: true,
-          mode: 'push',
-        },
-        resize: true,
+        onhover: { enable: true, mode: 'grab' },
+        onclick: { enable: true, mode: 'push' },
       },
       modes: {
-        grab: {
-          distance: 200,
-          line_linked: {
-            opacity: 1,
-          },
-        },
-        push: {
-          particles_nb: 4,
-        },
+        grab: { distance: 200, line_linked: { opacity: 1 } },
+        push: { particles_nb: 4 },
       },
     },
     retina_detect: true,
   };
 
-  const highlights = [
-    { icon: FiCpu, text: 'AI-powered understanding' },
-    { icon: FiFileText, text: 'All document formats' },
-    { icon: FiLock, text: '100% private & offline-ready' },
-    { icon: FiZap, text: 'Desktop-first experience' },
-  ];
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Particles Background */}
+
+      {/* Particles */}
       {init && (
         <div className="absolute inset-0 z-0">
           <Particles
@@ -118,153 +75,58 @@ export default function Hero() {
         </div>
       )}
 
-      {/* Gradient Overlays */}
+      {/* Gradient overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#05060A] via-transparent to-[#05060A] z-0" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary-500/20 rounded-full blur-[150px] z-0" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-primary-500/20 rounded-full blur-[160px] z-0" />
 
-      {/* Content */}
-      <div className="container mx-auto px-6 lg:px-12 py-32 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Main Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
-          >
-            {/* <span className="text-foreground">Ask Anything.</span> */}
-            <span className="text-foreground">Ask Anything.</span>
-            <br />
-            <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
-            From Your Documents.
-            </span>
-          </motion.h1>
+      <div className="w-full mx-auto px-6 lg:px-16 py-32 relative z-10">
 
-          {/* Subheadline */}
-          {/* <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
-          >
-            Upload PDFs, Word files, PPTs, spreadsheets, code, or text —{' '}
-            <span className="text-primary-600 font-semibold">
-              My Text Digest
-            </span>{' '}
-            gives precise, contextual answers instantly.
-          </motion.p> */}
+        {/* Wider gap between columns */}
+        <div className="grid lg:grid-cols-2 gap-24">
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
-          >
-            My Text Digest is a privacy-first knowledge platform that organizes your work
-            into focused projects, helping you explore documents intelligently - whether
-            you choose Desktop or Cloud.
-          </motion.p>
+          {/* DESKTOP SIDE */}
+          <div className='flex flex-col items-center h-full'>
 
-
-          {/* Highlights */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto"
-          >
-            {highlights.map((item, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="flex flex-col items-center space-y-2 p-4 rounded-xl glass hover:glow-violet transition-all duration-300"
+            <div className="flex flex-col items-center justify-start min-h-[350px]">
+                {/* Heading */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-3xl text-center md:text-5xl lg:text-5xl font-bold leading-tight mb-6"
               >
-                <item.icon className="w-6 h-6 text-primary-600" />
-                <span className="text-sm text-foreground text-center font-medium">
-                  {item.text}
+                <span className="text-foreground">
+                  AI-powered document intelligence
                 </span>
-              </motion.div>
-            ))}
-          </motion.div> */}
+                <br />
+                <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
+                  with complete local privacy
+                </span>
+              </motion.h1>
 
-          {/* CTA COMPARISON */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-12"
-          >
+              {/* Subtext */}
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-sm md:text-lg text-center align-middle text-muted-foreground mb-10 leading-relaxed max-w-xl"
+              >
+                My Text Digest Desktop is designed for users who prioritize complete
+                local control and offline privacy. All documents, summaries, and
+                conversations remain securely stored on the user’s device, making
+                it ideal for individuals and organizations handling sensitive
+                information.
+              </motion.p>
+            </div>
 
-            {/* CLOUD VERSION */}
+            {/* Card */}
             <motion.div
               whileHover={{ y: -6 }}
               className="glass rounded-2xl overflow-hidden flex flex-col backdrop-blur-xl bg-white/5 border border-white/10"
             >
 
-              {/* Card Header */}
               <div className="px-8 py-5 border-b border-white/10 bg-white/[0.03]">
-                <h3 className="text-2xl font-bold">
-                  <span className="text-foreground">Cloud </span>
-                  <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
-                    Version
-                  </span>
-                </h3>
-              </div>
-
-              {/* Card Body */}
-              <div className="p-8 flex flex-col justify-between flex-1">
-
-                <div>
-                  <p className="text-muted-foreground text-sm mb-6">
-                    Access My Text Digest from anywhere with secure cloud-powered document intelligence.
-                  </p>
-
-                  <ul className="space-y-3 text-sm font-bold text-muted-foreground">
-                    {[
-                      "Access your documents from any device",
-                      "Secure personal workspace for your files",
-                      "Organize documents by projects",
-                      "Upload and manage multiple documents easily",
-                      "Chat with your documents using AI",
-                      "Ask questions and get instant answers from your files",
-                      "Project-wise document chat",
-                      "Your data stays private to your account",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <FiCheck className="mt-0.5 text-[var(--primary-500)] flex-shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                </div>
-
-                <motion.a
-                  href="/web-pricing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.96 }}
-                  className="mt-8 flex items-center justify-center px-6 py-4 rounded-full 
-                            bg-primary-600 hover:bg-primary-700 
-                            text-white font-semibold transition-all duration-300 glow-primary"
-                >
-                  Sign Up Now
-                </motion.a>
-
-              </div>
-            </motion.div>
-
-
-            {/* DESKTOP VERSION */}
-            <motion.div
-              whileHover={{ y: -6 }}
-              className="glass rounded-2xl overflow-hidden flex flex-col backdrop-blur-xl bg-white/5 border border-white/10"
-            >
-
-              {/* Card Header */}
-              <div className="px-8 py-5 border-b border-white/10 bg-white/[0.03]">
-                <h3 className="text-2xl font-bold">
+                <h3 className="text-xl md:text-2xl text-center font-bold">
                   <span className="text-foreground">Desktop </span>
                   <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
                     Version
@@ -272,45 +134,32 @@ export default function Hero() {
                 </h3>
               </div>
 
-              {/* Card Body */}
               <div className="p-8 flex flex-col justify-between flex-1">
 
-                <div>
-                  <p className="text-muted-foreground text-sm mb-6">
-                    A privacy-first desktop application where your documents remain fully under your control.
-                  </p>
-
-                  <ul className="space-y-3 text-sm font-bold text-muted-foreground">
-                    {[
-                      "No cloud. No sharing. No leaks.",
-                      "No one else sees your information.",
-                      "Fast, smart, and private.",
-                      "Secure personal workspace for your files",
-                      "Organize documents by projects",
-                      "Chat with your documents using AI",
-                      "Ask questions and get answers from your files instantly",
-                      "Your data remains fully private",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <FiCheck className="mt-0.5 text-[var(--primary-500)] flex-shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                </div>
+                <ul className="space-y-3 text-sm md:text-sm font-bold text-muted-foreground">
+                  {[
+                    "Document Ingestion: Import TXT, PDF, or DOCX files with ease.",
+                    "Automated AI-powered summarization",
+                    "Secure local SQLite database storage",
+                    "Project management for organizing documents",
+                    "Project-wise chat across all documents",
+                    "Document-level chat for precise insights",
+                    "Privacy — your data stays fully on your device",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <FiCheck className="mt-0.5 text-2xl text-[var(--primary-500)] flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
 
                 <motion.a
                   href="/desktop-pricing"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.96 }}
                   className="mt-8 flex items-center justify-center px-6 py-4 rounded-full 
-                            border border-primary-500/40 
-                            text-primary-500 font-semibold 
-                            hover:bg-primary-500/10 hover:border-primary-500
-                            transition-all duration-300"
+                  bg-primary-600 hover:bg-primary-700 
+                  text-white font-semibold transition-all duration-300 glow-primary"
                 >
                   Sign Up Now
                 </motion.a>
@@ -318,27 +167,97 @@ export default function Hero() {
               </div>
             </motion.div>
 
-          </motion.div>
+          </div>
 
-          {/* Floating Mockup Preview (placeholder) */}
+          {/* CLOUD SIDE */}
+          <div className='flex flex-col items-center h-full'>
+
+            <div className="flex flex-col items-center justify-start min-h-[350px]">
+              {/* Heading */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-3xl text-center md:text-5xl lg:text-5xl font-bold leading-tight mb-6"
+              >
+                <span className="text-foreground">
+                  AI-powered document intelligence
+                </span>
+                <br />
+                <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
+                  with secure access anywhere
+                </span>
+              </motion.h1>
+
+              {/* Subtext */}
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-sm md:text-lg text-center text-muted-foreground mb-10 leading-relaxed max-w-xl"
+              >
+                My Text Digest Cloud is built for users who value anywhere access
+                and scalable document management. Documents, summaries, and
+                conversations are securely stored in the cloud, enabling seamless
+                access across devices and environments.
+              </motion.p>
+            </div>
+
+            
+
+            {/* Card */}
+            <motion.div
+              whileHover={{ y: -6 }}
+              className="glass rounded-2xl overflow-hidden flex flex-col backdrop-blur-xl bg-white/5 border border-white/10"
+            >
+
+              <div className="px-8 py-5 border-b border-white/10 bg-white/[0.03]">
+                <h3 className="text-xl md:text-2xl text-center font-bold">
+                  <span className="text-foreground">Cloud </span>
+                  <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
+                    Version
+                  </span>
+                </h3>
+              </div>
+
+              <div className="p-8 flex flex-col justify-between flex-1">
+
+                <ul className="space-y-3 text-sm font-bold text-muted-foreground">
+                  {[
+                    "Document Ingestion: Import TXT, PDF, or DOCX files with ease.",
+                    "Automated AI summarization",
+                    "Secure cloud storage",
+                    "Project management for organizing documents",
+                    "Project-wise AI conversations",
+                    "Document-level chat for precise insights",
+                    "Secure access across devices",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <FiCheck className="mt-0.5 text-2xl text-[var(--primary-500)] flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <motion.a
+                  href="/web-pricing"
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.96 }}
+                  className="mt-8 flex items-center justify-center px-6 py-4 rounded-full 
+                  bg-primary-600 hover:bg-primary-700 
+                  text-white font-semibold transition-all duration-300 glow-primary"
+                >
+                  Sign Up Now
+                </motion.a>
+
+              </div>
+            </motion.div>
+
+          </div>
+
         </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-[#00E5FF]/50 rounded-full flex justify-center pt-2"
-        >
-          <div className="w-1 h-2 bg-[#00E5FF] rounded-full" />
-        </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }
