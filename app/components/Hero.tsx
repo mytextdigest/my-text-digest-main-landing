@@ -84,8 +84,37 @@ export default function Hero() {
         {/* Wider gap between columns */}
         <div className="grid lg:grid-cols-2 gap-24">
 
+
+
           {/* DESKTOP SIDE */}
-          <div className='flex flex-col items-center h-full'>
+          <div className='relative flex flex-col items-center h-full overflow-hidden'>
+
+            {/* Intense Gradient Glows */}
+            <motion.div
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.5, 0.3],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00E5FF]/20 rounded-full blur-[150px]"
+            />
+            <motion.div
+              animate={{
+                scale: [1, 1.3, 1],
+                opacity: [0.3, 0.5, 0.3],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: 'easeInOut',
+                delay: 1,
+              }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7C7CFF]/20 rounded-full blur-[150px]"
+            />
 
             <div className="flex flex-col items-center justify-start min-h-[350px]">
                 {/* Heading */}
@@ -99,7 +128,7 @@ export default function Hero() {
                   AI-powered document intelligence
                 </span>
                 <br />
-                <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#00E5FF] to-blue-600 bg-clip-text text-transparent">
                   with complete local privacy
                 </span>
               </motion.h1>
@@ -168,6 +197,13 @@ export default function Hero() {
           {/* CLOUD SIDE */}
           <div className='flex flex-col items-center h-full'>
 
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute top-10 left-20 w-1 h-1 bg-[#00E5FF] rounded-full animate-pulse" />
+            <div className="absolute top-32 right-40 w-1 h-1 bg-[#7C7CFF] rounded-full animate-pulse" />
+            <div className="absolute bottom-20 left-1/3 w-1 h-1 bg-[#00E5FF] rounded-full animate-pulse" />
+            <div className="absolute bottom-40 right-1/4 w-1 h-1 bg-[#7C7CFF] rounded-full animate-pulse" />
+          </div>
+
             <div className="flex flex-col items-center justify-start min-h-[350px]">
               {/* Heading */}
               <motion.h1
@@ -180,7 +216,7 @@ export default function Hero() {
                   AI-powered document intelligence
                 </span>
                 <br />
-                <span className="bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#7C7CFF] to-purple-600 bg-clip-text text-transparent">
                   with secure access anywhere
                 </span>
               </motion.h1>

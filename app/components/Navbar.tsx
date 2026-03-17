@@ -52,8 +52,8 @@ export default function Navbar() {
               <Image
                 src="/logo.png"
                 alt="My Text Digest Logo"
-                width={40}
-                height={40}
+                width={70}
+                height={70}
                 className="object-contain"
               />
               <span className="text-xl font-bold text-foreground">

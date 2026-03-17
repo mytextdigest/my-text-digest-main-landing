@@ -25,9 +25,24 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { icon: FiFacebook, href: 'https://www.facebook.com/profile.php?id=61586244181271', label: 'Facebook' },
-    { icon: FiLinkedin, href: 'https://www.linkedin.com/showcase/110473332/admin/dashboard/', label: 'LinkedIn' },
-    { icon: FiYoutube, href: 'https://www.youtube.com/@MyTextDigest', label: 'Youtube' },
+    { 
+      icon: FiFacebook, 
+      href: 'https://www.facebook.com/profile.php?id=61586244181271', 
+      label: 'Facebook',
+      color: '#1877F2'
+    },
+    { 
+      icon: FiLinkedin, 
+      href: 'https://www.linkedin.com/showcase/110473332/admin/dashboard/', 
+      label: 'LinkedIn',
+      color: '#0A66C2'
+    },
+    { 
+      icon: FiYoutube, 
+      href: 'https://www.youtube.com/@MyTextDigest', 
+      label: 'Youtube',
+      color: '#FF0000'
+    },
   ];
 
   return (
@@ -58,7 +73,7 @@ export default function Footer() {
                 height={40}
                 className="object-contain"
               />
-              <span className="text-xl font-bold bg-gradient-to-r from-[var(--primary-500)] to-[var(--primary-700)] bg-clip-text text-transparent">
+              <span className="text-xl font-bold text-white">
                 My Text Digest
               </span>
             </motion.div>
@@ -153,7 +168,18 @@ export default function Footer() {
                 href={social.href}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-10 h-10 rounded-full border border-[#7C7CFF]/30 flex items-center justify-center text-[#EDEDED]/60 hover:text-[#00E5FF] hover:border-[#00E5FF] transition-all duration-300"
+                className="w-10 h-10 rounded-full border flex items-center justify-center text-[#EDEDED]/60 transition-all duration-300"
+                style={{
+                  borderColor: `${social.color}40`, // subtle border (opacity)
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = social.color;
+                  e.currentTarget.style.borderColor = social.color;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'rgba(237,237,237,0.6)';
+                  e.currentTarget.style.borderColor = `${social.color}40`;
+                }}
                 aria-label={social.label}
               >
                 <social.icon className="w-5 h-5" />
