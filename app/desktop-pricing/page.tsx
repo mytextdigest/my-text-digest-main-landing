@@ -199,7 +199,7 @@ function PlanCard({ plan }: { plan: Plan }) {
 
           <li className="flex items-start gap-3">
             <FiCheck className="mt-0.5 text-2xl text-[var(--primary-500)] flex-shrink-0" />
-            <span>No cloud. No sharing. No leaks.</span>
+            <span>Documents stays on your computer</span>
           </li>
 
           <li className="flex items-start gap-3">

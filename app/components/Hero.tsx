@@ -111,11 +111,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-sm md:text-lg text-center align-middle text-muted-foreground mb-10 leading-relaxed max-w-xl"
               >
-                My Text Digest Desktop is designed for users who prioritize complete
-                local control and offline privacy. All documents, summaries, and
-                conversations remain securely stored on the user’s device, making
-                it ideal for individuals and organizations handling sensitive
-                information.
+                My Text Digest Desktop is designed for users who prefer complete local control and offline privacy. All documents, summaries, and conversations remain securely stored on the user’s device, giving users full ownership of their data while working with their documents.
               </motion.p>
             </div>
 
@@ -199,7 +195,7 @@ export default function Hero() {
                 My Text Digest Cloud is built for users who value anywhere access
                 and scalable document management. Documents, summaries, and
                 conversations are securely stored in the cloud, enabling seamless
-                access across devices and environments.
+                access across devices from anywhere, anytime.
               </motion.p>
             </div>
 
