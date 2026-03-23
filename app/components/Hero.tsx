@@ -1,3 +1,5 @@
+// app/components/Hero.tsx
+
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -183,7 +185,7 @@ export default function Hero() {
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.96 }}
                   className="mt-8 flex items-center justify-center px-6 py-4 rounded-full 
-                  bg-primary-600 hover:bg-primary-700 
+                  bg-primary-600 hover:bg-primary-700 cursor-pointer z-10
                   text-white font-semibold transition-all duration-300 glow-primary"
                 >
                   Sign Up Now
@@ -197,12 +199,7 @@ export default function Hero() {
           {/* CLOUD SIDE */}
           <div className='flex flex-col items-center h-full'>
 
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-10 left-20 w-1 h-1 bg-[#00E5FF] rounded-full animate-pulse" />
-            <div className="absolute top-32 right-40 w-1 h-1 bg-[#7C7CFF] rounded-full animate-pulse" />
-            <div className="absolute bottom-20 left-1/3 w-1 h-1 bg-[#00E5FF] rounded-full animate-pulse" />
-            <div className="absolute bottom-40 right-1/4 w-1 h-1 bg-[#7C7CFF] rounded-full animate-pulse" />
-          </div>
+          
 
             <div className="flex flex-col items-center justify-start min-h-[350px]">
               {/* Heading */}
