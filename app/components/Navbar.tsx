@@ -26,7 +26,6 @@ export default function Navbar() {
     { name: "Use Cases", link: "/#use-cases" },
     { name: "Desktop Pricing", link: "/desktop-pricing" },
     { name: "Cloud Pricing", link: "/web-pricing" },
-    { name: "Privacy", link: "/privacy" }
   ];
 
   return (
