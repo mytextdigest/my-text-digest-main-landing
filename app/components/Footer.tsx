@@ -17,6 +17,7 @@ export default function Footer() {
     ],
     resources: [
       { name: 'Help & Support', href: '/help' },
+      { name: 'FAQ', href: '/faq' },
     ],
     legal: [
       { name: 'Privacy Policy', href: '/privacy' },

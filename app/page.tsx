@@ -8,12 +8,14 @@ import Features from './components/Features';
 import UseCases from './components/UseCases';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
+import Versions from './components/Versions';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <Hero />
+      <Versions/>
       <Features />
       <UseCases />
      

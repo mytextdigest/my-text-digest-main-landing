@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import PageLayout from '../components/PageLayout';
-import DocViewer, { DocViewerRenderers } from "react-doc-viewer";
 import mammoth from "mammoth";
 import { useEffect, useState } from 'react';
 
