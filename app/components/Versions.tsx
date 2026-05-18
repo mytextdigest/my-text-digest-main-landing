@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { FiCheck, FiMonitor, FiCloud } from 'react-icons/fi';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
@@ -25,12 +25,20 @@ const cloudFeatures = [
   { label: 'Use your own OpenAI API key', sub: 'You control the costs. No hidden fees.' },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  show: (i: number) => ({
+const fadeUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 28,
+  },
+
+  show: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] },
+    transition: {
+      duration: 0.55,
+      delay: i * 0.08,
+      ease: [0.22, 1, 0.36, 1],
+    },
   }),
 };
 
@@ -116,7 +124,7 @@ export default function Versions() {
               <>
                 Your documents,{' '}
                 <span className="bg-gradient-to-r from-[#00E5FF] to-blue-500 bg-clip-text text-transparent">
-                  only on your machine.
+                  only on your computer.
                 </span>
               </>
             }
